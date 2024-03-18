@@ -18,6 +18,7 @@ namespace IOOPAssignment_G12
         private string _fullName;
         private string _email;
         private string _phone;
+        private string _example;
         static SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
 
         public string Username { get => _username; set => _username = value; }
