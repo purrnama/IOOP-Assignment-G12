@@ -83,6 +83,7 @@ namespace IOOPAssignment_G12
                         frmAdmin a = new frmAdmin(displayName);
                         a.Show();
                     }
+                    //TODO: check for other roles and open their respective forms
                 }
             }
             else
