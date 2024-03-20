@@ -33,13 +33,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabWelcome = new System.Windows.Forms.TabPage();
             this.tabUsers = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnCreateNew = new System.Windows.Forms.Button();
+            this.txtBoxRole = new System.Windows.Forms.TextBox();
+            this.txtboxFullName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lstBoxUsers = new System.Windows.Forms.ListBox();
@@ -73,20 +73,21 @@
             this.label20 = new System.Windows.Forms.Label();
             this.lstCompetitions = new System.Windows.Forms.ListBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUpdateProfileCancel = new System.Windows.Forms.Button();
+            this.btnUpdateProfileSave = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtBoxEditPassword = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBoxEditUsername = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBoxEditPhone = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtBoxEditFullName = new System.Windows.Forms.TextBox();
+            this.txtBoxEditEmail = new System.Windows.Forms.TextBox();
+            this.tabFeedback = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
@@ -130,12 +131,14 @@
             this.tabControl1.Controls.Add(this.tabUsers);
             this.tabControl1.Controls.Add(this.tabIncome);
             this.tabControl1.Controls.Add(this.tabCompetitions);
+            this.tabControl1.Controls.Add(this.tabFeedback);
             this.tabControl1.Controls.Add(this.tabSettings);
             this.tabControl1.Location = new System.Drawing.Point(12, 55);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(728, 420);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabWelcome
             // 
@@ -149,13 +152,13 @@
             // 
             // tabUsers
             // 
-            this.tabUsers.Controls.Add(this.button3);
-            this.tabUsers.Controls.Add(this.button2);
-            this.tabUsers.Controls.Add(this.button1);
-            this.tabUsers.Controls.Add(this.textBox3);
-            this.tabUsers.Controls.Add(this.textBox2);
+            this.tabUsers.Controls.Add(this.btnDelete);
+            this.tabUsers.Controls.Add(this.btnEdit);
+            this.tabUsers.Controls.Add(this.btnCreateNew);
+            this.tabUsers.Controls.Add(this.txtBoxRole);
+            this.tabUsers.Controls.Add(this.txtboxFullName);
             this.tabUsers.Controls.Add(this.label3);
-            this.tabUsers.Controls.Add(this.textBox1);
+            this.tabUsers.Controls.Add(this.txtBoxUsername);
             this.tabUsers.Controls.Add(this.label2);
             this.tabUsers.Controls.Add(this.label1);
             this.tabUsers.Controls.Add(this.lstBoxUsers);
@@ -167,49 +170,51 @@
             this.tabUsers.Text = "Users";
             this.tabUsers.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.Location = new System.Drawing.Point(369, 190);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 28);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(369, 190);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(109, 28);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.Location = new System.Drawing.Point(369, 156);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 28);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(369, 156);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 28);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button1
+            // btnCreateNew
             // 
-            this.button1.Location = new System.Drawing.Point(134, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Create New";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreateNew.Location = new System.Drawing.Point(134, 343);
+            this.btnCreateNew.Name = "btnCreateNew";
+            this.btnCreateNew.Size = new System.Drawing.Size(122, 28);
+            this.btnCreateNew.TabIndex = 7;
+            this.btnCreateNew.Text = "Create New";
+            this.btnCreateNew.UseVisualStyleBackColor = true;
+            this.btnCreateNew.Click += new System.EventHandler(this.btnCreateNew_Click);
             // 
-            // textBox3
+            // txtBoxRole
             // 
-            this.textBox3.Location = new System.Drawing.Point(466, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(170, 26);
-            this.textBox3.TabIndex = 6;
+            this.txtBoxRole.Location = new System.Drawing.Point(466, 101);
+            this.txtBoxRole.Name = "txtBoxRole";
+            this.txtBoxRole.ReadOnly = true;
+            this.txtBoxRole.Size = new System.Drawing.Size(170, 26);
+            this.txtBoxRole.TabIndex = 6;
             // 
-            // textBox2
+            // txtboxFullName
             // 
-            this.textBox2.Location = new System.Drawing.Point(466, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(170, 26);
-            this.textBox2.TabIndex = 5;
+            this.txtboxFullName.Location = new System.Drawing.Point(466, 65);
+            this.txtboxFullName.Name = "txtboxFullName";
+            this.txtboxFullName.ReadOnly = true;
+            this.txtboxFullName.Size = new System.Drawing.Size(170, 26);
+            this.txtboxFullName.TabIndex = 5;
             // 
             // label3
             // 
@@ -221,13 +226,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Role:";
             // 
-            // textBox1
+            // txtBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(466, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(170, 26);
-            this.textBox1.TabIndex = 3;
+            this.txtBoxUsername.Location = new System.Drawing.Point(466, 29);
+            this.txtBoxUsername.Name = "txtBoxUsername";
+            this.txtBoxUsername.ReadOnly = true;
+            this.txtBoxUsername.Size = new System.Drawing.Size(170, 26);
+            this.txtBoxUsername.TabIndex = 3;
             // 
             // label2
             // 
@@ -257,6 +262,7 @@
             this.lstBoxUsers.Name = "lstBoxUsers";
             this.lstBoxUsers.Size = new System.Drawing.Size(214, 308);
             this.lstBoxUsers.TabIndex = 0;
+            this.lstBoxUsers.SelectedValueChanged += new System.EventHandler(this.lstBoxUsers_SelectedValueChanged);
             // 
             // tabIncome
             // 
@@ -569,8 +575,8 @@
             // 
             // tabSettings
             // 
-            this.tabSettings.Controls.Add(this.button5);
-            this.tabSettings.Controls.Add(this.button4);
+            this.tabSettings.Controls.Add(this.btnUpdateProfileCancel);
+            this.tabSettings.Controls.Add(this.btnUpdateProfileSave);
             this.tabSettings.Controls.Add(this.groupBox5);
             this.tabSettings.Controls.Add(this.groupBox4);
             this.tabSettings.Location = new System.Drawing.Point(4, 28);
@@ -580,30 +586,32 @@
             this.tabSettings.Text = "Update Profile";
             this.tabSettings.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnUpdateProfileCancel
             // 
-            this.button5.Location = new System.Drawing.Point(229, 341);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 28);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnUpdateProfileCancel.Location = new System.Drawing.Point(229, 341);
+            this.btnUpdateProfileCancel.Name = "btnUpdateProfileCancel";
+            this.btnUpdateProfileCancel.Size = new System.Drawing.Size(122, 28);
+            this.btnUpdateProfileCancel.TabIndex = 9;
+            this.btnUpdateProfileCancel.Text = "Cancel";
+            this.btnUpdateProfileCancel.UseVisualStyleBackColor = true;
+            this.btnUpdateProfileCancel.Click += new System.EventHandler(this.btnUpdateProfileCancel_Click);
             // 
-            // button4
+            // btnUpdateProfileSave
             // 
-            this.button4.Location = new System.Drawing.Point(357, 341);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 28);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Save changes";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdateProfileSave.Location = new System.Drawing.Point(357, 341);
+            this.btnUpdateProfileSave.Name = "btnUpdateProfileSave";
+            this.btnUpdateProfileSave.Size = new System.Drawing.Size(164, 28);
+            this.btnUpdateProfileSave.TabIndex = 8;
+            this.btnUpdateProfileSave.Text = "Save changes";
+            this.btnUpdateProfileSave.UseVisualStyleBackColor = true;
+            this.btnUpdateProfileSave.Click += new System.EventHandler(this.btnUpdateProfileSave_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label24);
-            this.groupBox5.Controls.Add(this.textBox6);
+            this.groupBox5.Controls.Add(this.txtBoxEditPassword);
             this.groupBox5.Controls.Add(this.label25);
-            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.txtBoxEditUsername);
             this.groupBox5.Location = new System.Drawing.Point(157, 29);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(428, 125);
@@ -621,12 +629,14 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Username:";
             // 
-            // textBox6
+            // txtBoxEditPassword
             // 
-            this.textBox6.Location = new System.Drawing.Point(210, 72);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(154, 26);
-            this.textBox6.TabIndex = 3;
+            this.txtBoxEditPassword.Location = new System.Drawing.Point(210, 72);
+            this.txtBoxEditPassword.Name = "txtBoxEditPassword";
+            this.txtBoxEditPassword.PasswordChar = '*';
+            this.txtBoxEditPassword.Size = new System.Drawing.Size(154, 26);
+            this.txtBoxEditPassword.TabIndex = 3;
+            this.txtBoxEditPassword.TextChanged += new System.EventHandler(this.txtBoxEditPassword_TextChanged);
             // 
             // label25
             // 
@@ -638,21 +648,23 @@
             this.label25.TabIndex = 1;
             this.label25.Text = "Password:";
             // 
-            // textBox7
+            // txtBoxEditUsername
             // 
-            this.textBox7.Location = new System.Drawing.Point(210, 40);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(154, 26);
-            this.textBox7.TabIndex = 2;
+            this.txtBoxEditUsername.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBoxEditUsername.Location = new System.Drawing.Point(210, 40);
+            this.txtBoxEditUsername.Name = "txtBoxEditUsername";
+            this.txtBoxEditUsername.Size = new System.Drawing.Size(154, 26);
+            this.txtBoxEditUsername.TabIndex = 2;
+            this.txtBoxEditUsername.TextChanged += new System.EventHandler(this.txtBoxEditUsername_TextChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label26);
             this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.txtBoxEditPhone);
             this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.txtBoxEditFullName);
+            this.groupBox4.Controls.Add(this.txtBoxEditEmail);
             this.groupBox4.Location = new System.Drawing.Point(157, 160);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(428, 164);
@@ -680,12 +692,13 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Email:";
             // 
-            // textBox5
+            // txtBoxEditPhone
             // 
-            this.textBox5.Location = new System.Drawing.Point(210, 103);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(154, 26);
-            this.textBox5.TabIndex = 3;
+            this.txtBoxEditPhone.Location = new System.Drawing.Point(210, 103);
+            this.txtBoxEditPhone.Name = "txtBoxEditPhone";
+            this.txtBoxEditPhone.Size = new System.Drawing.Size(154, 26);
+            this.txtBoxEditPhone.TabIndex = 3;
+            this.txtBoxEditPhone.TextChanged += new System.EventHandler(this.txtBoxEditPhone_TextChanged);
             // 
             // label23
             // 
@@ -697,19 +710,30 @@
             this.label23.TabIndex = 1;
             this.label23.Text = "Phone Number:";
             // 
-            // textBox8
+            // txtBoxEditFullName
             // 
-            this.textBox8.Location = new System.Drawing.Point(210, 39);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(154, 26);
-            this.textBox8.TabIndex = 2;
+            this.txtBoxEditFullName.Location = new System.Drawing.Point(210, 39);
+            this.txtBoxEditFullName.Name = "txtBoxEditFullName";
+            this.txtBoxEditFullName.Size = new System.Drawing.Size(154, 26);
+            this.txtBoxEditFullName.TabIndex = 2;
+            this.txtBoxEditFullName.TextChanged += new System.EventHandler(this.txtBoxEditFullName_TextChanged);
             // 
-            // textBox4
+            // txtBoxEditEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(210, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 26);
-            this.textBox4.TabIndex = 2;
+            this.txtBoxEditEmail.Location = new System.Drawing.Point(210, 71);
+            this.txtBoxEditEmail.Name = "txtBoxEditEmail";
+            this.txtBoxEditEmail.Size = new System.Drawing.Size(154, 26);
+            this.txtBoxEditEmail.TabIndex = 2;
+            this.txtBoxEditEmail.TextChanged += new System.EventHandler(this.txtBoxEditEmail_TextChanged);
+            // 
+            // tabFeedback
+            // 
+            this.tabFeedback.Location = new System.Drawing.Point(4, 28);
+            this.tabFeedback.Name = "tabFeedback";
+            this.tabFeedback.Size = new System.Drawing.Size(720, 388);
+            this.tabFeedback.TabIndex = 5;
+            this.tabFeedback.Text = "Feedback";
+            this.tabFeedback.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -769,13 +793,13 @@
         private System.Windows.Forms.TabPage tabCompetitions;
         private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.TabPage tabUsers;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnCreateNew;
+        private System.Windows.Forms.TextBox txtBoxRole;
+        private System.Windows.Forms.TextBox txtboxFullName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstBoxUsers;
@@ -806,20 +830,21 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtBoxEditPhone;
+        private System.Windows.Forms.TextBox txtBoxEditEmail;
+        private System.Windows.Forms.Button btnUpdateProfileCancel;
+        private System.Windows.Forms.Button btnUpdateProfileSave;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtBoxEditPassword;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBoxEditUsername;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtBoxEditFullName;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage tabFeedback;
     }
 }
