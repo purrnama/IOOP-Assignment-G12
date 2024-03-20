@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -89,6 +90,10 @@ namespace IOOPAssignment_G12
 
         private void txtBoxEditUsername_TextChanged(object sender, EventArgs e)
         {
+            var textboxSender = (TextBox)sender;
+            var cursorPosition = textboxSender.SelectionStart;
+            textboxSender.Text = System.Text.RegularExpressions.Regex.Replace(textboxSender.Text, "[^0-9a-zA-Z ]", "");
+            textboxSender.SelectionStart = cursorPosition;
             if (txtBoxEditUsername.Text != currentUser.Username)
             {
                 txtBoxEditUsername.BackColor = SystemColors.Info;
@@ -152,6 +157,28 @@ namespace IOOPAssignment_G12
 
         private void btnUpdateProfileSave_Click(object sender, EventArgs e)
         {
+            if (txtBoxEditUsername.Text == string.Empty)
+            {
+                MessageBox.Show("Invalid input for username", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtBoxEditFullName.Text == string.Empty)
+            {
+                MessageBox.Show("Invalid input for full name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (txtBoxEditEmail.Text != string.Empty)
+            {
+                try
+                {
+                    MailAddress email = new MailAddress(txtBoxEditEmail.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Invalid input for email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
             string  newUsername = currentUser.Username,
                     newPassword = currentUser.Password,
                     newFullName = currentUser.FullName,
@@ -196,7 +223,25 @@ namespace IOOPAssignment_G12
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            if(txtBoxUsername.Text != string.Empty)
+            {
+                var warning = MessageBox.Show("User " + txtBoxUsername.Text + " will be deleted. All user role data for this user will be discarded. This action cannot be undone. Are you sure?", "Attention Required", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if(warning == DialogResult.Cancel)
+                {
+                    return;
+                }
+                User selected = new User(lstBoxUsers.SelectedItem.ToString());
+                User.ViewProfile(selected);
+                string status = User.DeleteUser(selected);
+                if (status == null)
+                {
+                    MessageBox.Show("Successfully deleted user " + selected.Username, "Delete User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Delete User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

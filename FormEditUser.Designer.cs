@@ -35,7 +35,7 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.txtBoxFullName = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cBoxRole = new System.Windows.Forms.ComboBox();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
@@ -60,6 +60,7 @@
             this.txtBoxPhone.Name = "txtBoxPhone";
             this.txtBoxPhone.Size = new System.Drawing.Size(144, 26);
             this.txtBoxPhone.TabIndex = 37;
+            this.txtBoxPhone.TextChanged += new System.EventHandler(this.txtBoxPhone_TextChanged);
             // 
             // lblEmail
             // 
@@ -77,6 +78,7 @@
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(144, 26);
             this.txtBoxEmail.TabIndex = 35;
+            this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
             // 
             // lblFullName
             // 
@@ -94,6 +96,7 @@
             this.txtBoxFullName.Name = "txtBoxFullName";
             this.txtBoxFullName.Size = new System.Drawing.Size(144, 26);
             this.txtBoxFullName.TabIndex = 33;
+            this.txtBoxFullName.TextChanged += new System.EventHandler(this.txtBoxFullName_TextChanged);
             // 
             // lblUsername
             // 
@@ -105,14 +108,15 @@
             this.lblUsername.TabIndex = 32;
             this.lblUsername.Text = "Username:";
             // 
-            // btnAdd
+            // btnEdit
             // 
-            this.btnAdd.Location = new System.Drawing.Point(48, 380);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(241, 31);
-            this.btnAdd.TabIndex = 31;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(48, 380);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(241, 31);
+            this.btnEdit.TabIndex = 31;
+            this.btnEdit.Text = "Save changes";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // label4
             // 
@@ -136,6 +140,7 @@
             this.cBoxRole.Name = "cBoxRole";
             this.cBoxRole.Size = new System.Drawing.Size(144, 28);
             this.cBoxRole.TabIndex = 29;
+            this.cBoxRole.SelectedIndexChanged += new System.EventHandler(this.cBoxRole_SelectedIndexChanged);
             // 
             // txtBoxPassword
             // 
@@ -144,6 +149,7 @@
             this.txtBoxPassword.PasswordChar = '*';
             this.txtBoxPassword.Size = new System.Drawing.Size(144, 26);
             this.txtBoxPassword.TabIndex = 28;
+            this.txtBoxPassword.TextChanged += new System.EventHandler(this.txtBoxPassword_TextChanged);
             // 
             // txtBoxUsername
             // 
@@ -151,6 +157,7 @@
             this.txtBoxUsername.Name = "txtBoxUsername";
             this.txtBoxUsername.Size = new System.Drawing.Size(144, 26);
             this.txtBoxUsername.TabIndex = 27;
+            this.txtBoxUsername.TextChanged += new System.EventHandler(this.txtBoxUsername_TextChanged);
             // 
             // label3
             // 
@@ -185,7 +192,7 @@
             this.Controls.Add(this.lblFullName);
             this.Controls.Add(this.txtBoxFullName);
             this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cBoxRole);
             this.Controls.Add(this.txtBoxPassword);
@@ -210,7 +217,7 @@
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.TextBox txtBoxFullName;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cBoxRole;
         private System.Windows.Forms.TextBox txtBoxPassword;

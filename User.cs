@@ -134,6 +134,17 @@ namespace IOOPAssignment_G12
         public static string DeleteUser(User user)
         {
             string status = null;
+            conn.Open();
+            //prepare sql command for deleting user
+            SqlCommand deleteUser = new SqlCommand("DELETE FROM users WHERE username=@u", conn);
+            deleteUser.Parameters.AddWithValue("@u", user.Username);
+
+            int i = deleteUser.ExecuteNonQuery();
+            if(i == 0)
+            {
+                status = "Unable to delete user " + user.Username;
+            }
+            conn.Close();
             return status;
         }
 
@@ -193,6 +204,7 @@ namespace IOOPAssignment_G12
                         user.Phone = string.Empty;
                     }
                     user.Username = rd.GetString(1);
+                    user.Password = rd.GetString(2);
                     user.Role = rd.GetString(6);
                 }
                 rd.Close();
@@ -231,6 +243,7 @@ namespace IOOPAssignment_G12
                         user.Phone = string.Empty;
                     }
                     user.Username = rd2.GetString(1);
+                    user.Password = rd2.GetString(2);
                     user.Role = rd2.GetString(6);
                 }
                 rd2.Close();
@@ -256,7 +269,7 @@ namespace IOOPAssignment_G12
             checkUsername.Parameters.AddWithValue("@u", username);
 
             int count = Convert.ToInt32(checkUsername.ExecuteScalar());
-            if(count > 0)
+            if(currentUser.Username != username && count > 0)
             {
                 status = "Cannot update username, user of name " + username + " already exists.";
             }
@@ -271,6 +284,5 @@ namespace IOOPAssignment_G12
             conn.Close();
             return status;
         }
-
     }
 }
