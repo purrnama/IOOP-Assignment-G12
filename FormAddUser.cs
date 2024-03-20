@@ -53,7 +53,15 @@ namespace IOOPAssignment_G12
             {
                 User newUser = new User(txtBoxUsername.Text, txtBoxPassword.Text, txtBoxFullName.Text, txtBoxEmail.Text, txtBoxPhone.Text);
                 string status = newUser.AddUser("admin");
-                MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(status == null)
+                {
+
+                    MessageBox.Show("Successfully added user" + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             // TODO
             if (cBoxRole.SelectedItem.ToString() == "Coach")
