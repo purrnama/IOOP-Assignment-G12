@@ -1,6 +1,6 @@
 ﻿namespace IOOPAssignment_G12
 {
-    partial class FormManager
+    partial class frmManager
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,16 @@
         {
             this.tabCtrlManager = new System.Windows.Forms.TabControl();
             this.tabPgManageCompetition = new System.Windows.Forms.TabPage();
-            this.tabPgRecommendedStudent = new System.Windows.Forms.TabPage();
-            this.btnAddCompetition = new System.Windows.Forms.Button();
-            this.btnEditCompetition = new System.Windows.Forms.Button();
-            this.btnDeleteCompetition = new System.Windows.Forms.Button();
-            this.btnAssignMember = new System.Windows.Forms.Button();
-            this.tabPgUpdateProfile = new System.Windows.Forms.TabPage();
-            this.btnRecordResult = new System.Windows.Forms.Button();
-            this.btnChangeUsername = new System.Windows.Forms.Button();
-            this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnViewStudent = new System.Windows.Forms.Button();
+            this.btnRecordResult = new System.Windows.Forms.Button();
+            this.btnAssignMember = new System.Windows.Forms.Button();
+            this.btnDeleteCompetition = new System.Windows.Forms.Button();
+            this.btnEditCompetition = new System.Windows.Forms.Button();
+            this.btnAddCompetition = new System.Windows.Forms.Button();
+            this.tabPgRecommendedStudent = new System.Windows.Forms.TabPage();
+            this.tabPgUpdateProfile = new System.Windows.Forms.TabPage();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnChangeUsername = new System.Windows.Forms.Button();
             this.tabCtrlManager.SuspendLayout();
             this.tabPgManageCompetition.SuspendLayout();
             this.tabPgUpdateProfile.SuspendLayout();
@@ -73,33 +73,32 @@
             this.tabPgManageCompetition.Text = "Manage Competition";
             this.tabPgManageCompetition.UseVisualStyleBackColor = true;
             // 
-            // tabPgRecommendedStudent
+            // btnViewStudent
             // 
-            this.tabPgRecommendedStudent.Location = new System.Drawing.Point(4, 24);
-            this.tabPgRecommendedStudent.Name = "tabPgRecommendedStudent";
-            this.tabPgRecommendedStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgRecommendedStudent.Size = new System.Drawing.Size(413, 425);
-            this.tabPgRecommendedStudent.TabIndex = 1;
-            this.tabPgRecommendedStudent.Text = "Recommended Students";
-            this.tabPgRecommendedStudent.UseVisualStyleBackColor = true;
+            this.btnViewStudent.Location = new System.Drawing.Point(47, 338);
+            this.btnViewStudent.Name = "btnViewStudent";
+            this.btnViewStudent.Size = new System.Drawing.Size(129, 24);
+            this.btnViewStudent.TabIndex = 5;
+            this.btnViewStudent.Text = "View Students";
+            this.btnViewStudent.UseVisualStyleBackColor = true;
             // 
-            // btnAddCompetition
+            // btnRecordResult
             // 
-            this.btnAddCompetition.Location = new System.Drawing.Point(47, 52);
-            this.btnAddCompetition.Name = "btnAddCompetition";
-            this.btnAddCompetition.Size = new System.Drawing.Size(129, 23);
-            this.btnAddCompetition.TabIndex = 0;
-            this.btnAddCompetition.Text = "Add Competition";
-            this.btnAddCompetition.UseVisualStyleBackColor = true;
+            this.btnRecordResult.Location = new System.Drawing.Point(47, 282);
+            this.btnRecordResult.Name = "btnRecordResult";
+            this.btnRecordResult.Size = new System.Drawing.Size(129, 23);
+            this.btnRecordResult.TabIndex = 4;
+            this.btnRecordResult.Text = "Record Results";
+            this.btnRecordResult.UseVisualStyleBackColor = true;
             // 
-            // btnEditCompetition
+            // btnAssignMember
             // 
-            this.btnEditCompetition.Location = new System.Drawing.Point(47, 112);
-            this.btnEditCompetition.Name = "btnEditCompetition";
-            this.btnEditCompetition.Size = new System.Drawing.Size(129, 24);
-            this.btnEditCompetition.TabIndex = 1;
-            this.btnEditCompetition.Text = "Edit Competition";
-            this.btnEditCompetition.UseVisualStyleBackColor = true;
+            this.btnAssignMember.Location = new System.Drawing.Point(47, 225);
+            this.btnAssignMember.Name = "btnAssignMember";
+            this.btnAssignMember.Size = new System.Drawing.Size(129, 23);
+            this.btnAssignMember.TabIndex = 3;
+            this.btnAssignMember.Text = "Assign Members";
+            this.btnAssignMember.UseVisualStyleBackColor = true;
             // 
             // btnDeleteCompetition
             // 
@@ -110,14 +109,33 @@
             this.btnDeleteCompetition.Text = "Delete Competition";
             this.btnDeleteCompetition.UseVisualStyleBackColor = true;
             // 
-            // btnAssignMember
+            // btnEditCompetition
             // 
-            this.btnAssignMember.Location = new System.Drawing.Point(47, 225);
-            this.btnAssignMember.Name = "btnAssignMember";
-            this.btnAssignMember.Size = new System.Drawing.Size(129, 23);
-            this.btnAssignMember.TabIndex = 3;
-            this.btnAssignMember.Text = "Assign Members";
-            this.btnAssignMember.UseVisualStyleBackColor = true;
+            this.btnEditCompetition.Location = new System.Drawing.Point(47, 112);
+            this.btnEditCompetition.Name = "btnEditCompetition";
+            this.btnEditCompetition.Size = new System.Drawing.Size(129, 24);
+            this.btnEditCompetition.TabIndex = 1;
+            this.btnEditCompetition.Text = "Edit Competition";
+            this.btnEditCompetition.UseVisualStyleBackColor = true;
+            // 
+            // btnAddCompetition
+            // 
+            this.btnAddCompetition.Location = new System.Drawing.Point(47, 52);
+            this.btnAddCompetition.Name = "btnAddCompetition";
+            this.btnAddCompetition.Size = new System.Drawing.Size(129, 23);
+            this.btnAddCompetition.TabIndex = 0;
+            this.btnAddCompetition.Text = "Add Competition";
+            this.btnAddCompetition.UseVisualStyleBackColor = true;
+            // 
+            // tabPgRecommendedStudent
+            // 
+            this.tabPgRecommendedStudent.Location = new System.Drawing.Point(4, 24);
+            this.tabPgRecommendedStudent.Name = "tabPgRecommendedStudent";
+            this.tabPgRecommendedStudent.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPgRecommendedStudent.Size = new System.Drawing.Size(413, 425);
+            this.tabPgRecommendedStudent.TabIndex = 1;
+            this.tabPgRecommendedStudent.Text = "Recommended Students";
+            this.tabPgRecommendedStudent.UseVisualStyleBackColor = true;
             // 
             // tabPgUpdateProfile
             // 
@@ -130,14 +148,14 @@
             this.tabPgUpdateProfile.Text = "Update Profile";
             this.tabPgUpdateProfile.UseVisualStyleBackColor = true;
             // 
-            // btnRecordResult
+            // btnChangePassword
             // 
-            this.btnRecordResult.Location = new System.Drawing.Point(47, 282);
-            this.btnRecordResult.Name = "btnRecordResult";
-            this.btnRecordResult.Size = new System.Drawing.Size(129, 23);
-            this.btnRecordResult.TabIndex = 4;
-            this.btnRecordResult.Text = "Record Results";
-            this.btnRecordResult.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Location = new System.Drawing.Point(40, 112);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(120, 23);
+            this.btnChangePassword.TabIndex = 1;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
             // 
             // btnChangeUsername
             // 
@@ -148,33 +166,16 @@
             this.btnChangeUsername.Text = "Change Username";
             this.btnChangeUsername.UseVisualStyleBackColor = true;
             // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.Location = new System.Drawing.Point(40, 112);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(120, 23);
-            this.btnChangePassword.TabIndex = 1;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
-            // 
-            // btnViewStudent
-            // 
-            this.btnViewStudent.Location = new System.Drawing.Point(47, 338);
-            this.btnViewStudent.Name = "btnViewStudent";
-            this.btnViewStudent.Size = new System.Drawing.Size(129, 24);
-            this.btnViewStudent.TabIndex = 5;
-            this.btnViewStudent.Text = "View Students";
-            this.btnViewStudent.UseVisualStyleBackColor = true;
-            // 
-            // FormManager
+            // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(719, 491);
             this.Controls.Add(this.tabCtrlManager);
-            this.Name = "FormManager";
+            this.Name = "frmManager";
             this.Text = "Manager Panel";
+            this.Load += new System.EventHandler(this.frmManager_Load);
             this.tabCtrlManager.ResumeLayout(false);
             this.tabPgManageCompetition.ResumeLayout(false);
             this.tabPgUpdateProfile.ResumeLayout(false);

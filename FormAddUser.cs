@@ -86,5 +86,9 @@ namespace IOOPAssignment_G12
             textboxSender.SelectionStart = cursorPosition;
         }
 
+        private void frmAddUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

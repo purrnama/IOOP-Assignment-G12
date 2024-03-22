@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace IOOPAssignment_G12
 {
-    public partial class FormManager : Form
+    public partial class frmManager : Form
     {
-        public FormManager()
+        public frmManager()
         {
             InitializeComponent();
+        }
+        public frmManager(string displayName)
+        {
+            InitializeComponent();
+            
+        }
+
+        private void frmManager_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
