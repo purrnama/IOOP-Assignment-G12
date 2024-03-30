@@ -89,7 +89,8 @@ namespace IOOPAssignment_G12
                     }
                     if(role == "coach")
                     {
-
+                        frmCoach c = new frmCoach();
+                        c.Show();
                     }
                     if(role == "member")
                     {

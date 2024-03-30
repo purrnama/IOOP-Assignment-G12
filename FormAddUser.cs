@@ -66,7 +66,22 @@ namespace IOOPAssignment_G12
             if (cBoxRole.SelectedItem.ToString() == "Coach")
             {
                 string status = newUser.AddUser("coach");
-                //TODO: Insert row to coach-specific table
+                if(status != null)
+                {
+                    MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                Coach newCoach = new Coach(txtBoxUsername.Text, 500);
+                string coachStatus = newCoach.AddCoach();
+                if (status == null)
+                {
+
+                    MessageBox.Show("Successfully added coach with base salary of RM500" + txtBoxUsername.Text, "Add Coach Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add Coach Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             if (cBoxRole.SelectedItem.ToString() == "Manager")
             {
