@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
@@ -54,6 +56,73 @@ namespace IOOPAssignment_G12
                     lstBoxUsers.Items.Add(user);
                 }
             }
+            if (tabControl1.SelectedIndex == 2)
+            {
+                lstBoxCoaches.Items.Clear();
+                ArrayList coaches = User.ViewAll("coach");
+                foreach (var coach in coaches)
+                {
+                    lstBoxCoaches.Items.Add(coach);
+                }
+            }
+            if (tabControl1.SelectedIndex == 3)
+            {
+                lstBoxCompetitions.Items.Clear();
+                ArrayList comps = new ArrayList();
+                //TODO: put this in Competition class
+                //BEGIN
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
+                SqlCommand listComp = new SqlCommand("SELECT competitionName FROM competitions", conn);
+                conn.Open();
+                SqlDataReader rd = listComp.ExecuteReader();
+                while (rd.Read())
+                {
+                    try
+                    {
+                        comps.Add(rd.GetString(0));
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+                conn.Close();
+                //END
+                foreach(var comp in comps)
+                {
+                    lstBoxCompetitions.Items.Add(comp);
+                }
+
+
+            }
+            if (tabControl1.SelectedIndex == 4)
+            {
+                lstBoxFeedback.Items.Clear();
+                ArrayList feedbacks = new ArrayList();
+                //TODO: put this in Suggestions class
+                //BEGIN
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
+                SqlCommand listFb = new SqlCommand("SELECT id FROM suggestions", conn);
+                conn.Open();
+                SqlDataReader rd = listFb.ExecuteReader();
+                while (rd.Read())
+                {
+                    try
+                    {
+                        feedbacks.Add(rd.GetInt32(0));
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+                conn.Close();
+                //END
+                foreach(var feedback in feedbacks)
+                {
+                    lstBoxFeedback.Items.Add(feedback);
+                }
+            }
             if (tabControl1.SelectedIndex == 5)
             {
                 refreshProfile();
@@ -81,6 +150,16 @@ namespace IOOPAssignment_G12
                 btnDelete.Enabled = true;
             }
             */
+        }
+        private void lstBoxFeedback_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Suggestion selected = new Suggestion(int.Parse(lstBoxFeedback.SelectedItem.ToString()));
+            string status = selected.getSuggestionById();
+            if(status == null)
+            {
+                lblFeedbackFrom.Text = selected.Username;
+                txtBoxFeedbackMessage.Text = selected.Message;
+            }
         }
 
         private void btnUpdateProfileCancel_Click(object sender, EventArgs e)
