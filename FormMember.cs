@@ -12,34 +12,55 @@ namespace IOOPAssignment_G12
 {
     public partial class FormMember: Form
     {
+        Member currentMember;
         public FormMember()
         {
             InitializeComponent();
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        public FormMember(string username)
         {
-            string id = txtUsername.Text;
-            string pass = txtPassword.Text;
-
-            if (id == "member" && pass == "12345")
-            {
-                this.Hide();
-
-                FormMember f = new FormMember();
-                f.Show();
-            }
-            else
-            {
-                MessageBox.Show("Password or Username is incorrect...");
-            }
-
+            InitializeComponent();
+            currentMember = new Member(username);
+        }
+        private void btnEnrollAndPay_Click(object sender, EventArgs e)
+        {
+            EnrollForm enrollForm = new EnrollForm(currentMember);
+            enrollForm.Show();
+        }
+        private void unenrollButton_Click(object sender, EventArgs e)
+        {
+            UnenrollForm unenrollForm = new UnenrollForm();
+            unenrollForm.Show();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void viewScheduleButton_Click(object sender, EventArgs e)
         {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
+            ViewScheduleForm viewScheduleForm = new ViewScheduleForm();
+            viewScheduleForm.Show();
+        }
+
+        private void viewPerformanceButton_Click(object sender, EventArgs e)
+        {
+            ViewPerformanceForm viewPerformanceForm = new ViewPerformanceForm();
+            viewPerformanceForm.Show();
+        }
+
+        private void viewCompetitionsButton_Click(object sender, EventArgs e)
+        {
+            viewCompetitionsForm viewCompetitionsForm = new viewCompetitionsForm();
+            viewCompetitionsForm.Show();
+        }
+
+        private void updateProfileButton_Click(object sender, EventArgs e)
+        {
+            updateProfileForm updateProfileForm = new updateProfileForm();
+            updateProfileForm.Show();
+        }
+
+        private void btnSendSuggestion_Click(object sender, EventArgs e)
+        {
+            sendSuggestionForm sendSuggestionForm = new sendSuggestionForm(currentMember.Username);
+            sendSuggestionForm.Show();
         }
     }
 }

@@ -76,6 +76,11 @@ namespace IOOPAssignment_G12
                         frmAdmin a = new frmAdmin(displayName);
                         a.Show();
                     }
+                    if (role == "member")
+                    {
+                        FormMember m = new FormMember(displayName);
+                        m.Show();
+                    }
                 }
             }
             else

@@ -28,103 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnEnrollAndPay = new System.Windows.Forms.Button();
+            this.btnUnenroll = new System.Windows.Forms.Button();
+            this.btnTrainingSchedule = new System.Windows.Forms.Button();
+            this.btnPerformanceRecord = new System.Windows.Forms.Button();
+            this.btnAllCompetition = new System.Windows.Forms.Button();
+            this.btnSendSuggestion = new System.Windows.Forms.Button();
+            this.btnUpdateProfile = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // btnEnrollAndPay
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Username";
+            this.btnEnrollAndPay.Location = new System.Drawing.Point(27, 32);
+            this.btnEnrollAndPay.Name = "btnEnrollAndPay";
+            this.btnEnrollAndPay.Size = new System.Drawing.Size(172, 40);
+            this.btnEnrollAndPay.TabIndex = 0;
+            this.btnEnrollAndPay.Text = "Enroll and Pay";
+            this.btnEnrollAndPay.UseVisualStyleBackColor = true;
+            this.btnEnrollAndPay.Click += new System.EventHandler(this.btnEnrollAndPay_Click);
             // 
-            // label2
+            // btnUnenroll
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Password";
+            this.btnUnenroll.Location = new System.Drawing.Point(27, 108);
+            this.btnUnenroll.Name = "btnUnenroll";
+            this.btnUnenroll.Size = new System.Drawing.Size(172, 40);
+            this.btnUnenroll.TabIndex = 0;
+            this.btnUnenroll.Text = "Unenroll";
+            this.btnUnenroll.UseVisualStyleBackColor = true;
             // 
-            // txtPassword
+            // btnTrainingSchedule
             // 
-            this.txtPassword.Location = new System.Drawing.Point(193, 95);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(208, 22);
-            this.txtPassword.TabIndex = 1;
+            this.btnTrainingSchedule.Location = new System.Drawing.Point(27, 184);
+            this.btnTrainingSchedule.Name = "btnTrainingSchedule";
+            this.btnTrainingSchedule.Size = new System.Drawing.Size(172, 40);
+            this.btnTrainingSchedule.TabIndex = 0;
+            this.btnTrainingSchedule.Text = "Training Schedule";
+            this.btnTrainingSchedule.UseVisualStyleBackColor = true;
             // 
-            // txtUsername
+            // btnPerformanceRecord
             // 
-            this.txtUsername.Location = new System.Drawing.Point(193, 49);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(208, 22);
-            this.txtUsername.TabIndex = 2;
+            this.btnPerformanceRecord.Location = new System.Drawing.Point(304, 32);
+            this.btnPerformanceRecord.Name = "btnPerformanceRecord";
+            this.btnPerformanceRecord.Size = new System.Drawing.Size(172, 40);
+            this.btnPerformanceRecord.TabIndex = 0;
+            this.btnPerformanceRecord.Text = "Performance Record";
+            this.btnPerformanceRecord.UseVisualStyleBackColor = true;
             // 
-            // btnLogin
+            // btnAllCompetition
             // 
-            this.btnLogin.Location = new System.Drawing.Point(165, 155);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnAllCompetition.Location = new System.Drawing.Point(304, 108);
+            this.btnAllCompetition.Name = "btnAllCompetition";
+            this.btnAllCompetition.Size = new System.Drawing.Size(172, 40);
+            this.btnAllCompetition.TabIndex = 0;
+            this.btnAllCompetition.Text = "All Competition";
+            this.btnAllCompetition.UseVisualStyleBackColor = true;
             // 
-            // btnReset
+            // btnSendSuggestion
             // 
-            this.btnReset.Location = new System.Drawing.Point(288, 155);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 4;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnSendSuggestion.Location = new System.Drawing.Point(304, 184);
+            this.btnSendSuggestion.Name = "btnSendSuggestion";
+            this.btnSendSuggestion.Size = new System.Drawing.Size(172, 40);
+            this.btnSendSuggestion.TabIndex = 0;
+            this.btnSendSuggestion.Text = "Send Suggestion";
+            this.btnSendSuggestion.UseVisualStyleBackColor = true;
+            this.btnSendSuggestion.Click += new System.EventHandler(this.btnSendSuggestion_Click);
             // 
-            // btnCancel
+            // btnUpdateProfile
             // 
-            this.btnCancel.Location = new System.Drawing.Point(409, 155);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnUpdateProfile.Location = new System.Drawing.Point(169, 247);
+            this.btnUpdateProfile.Name = "btnUpdateProfile";
+            this.btnUpdateProfile.Size = new System.Drawing.Size(172, 40);
+            this.btnUpdateProfile.TabIndex = 0;
+            this.btnUpdateProfile.Text = "Update Profile";
+            this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSendSuggestion);
+            this.groupBox1.Controls.Add(this.btnUpdateProfile);
+            this.groupBox1.Controls.Add(this.btnEnrollAndPay);
+            this.groupBox1.Controls.Add(this.btnUnenroll);
+            this.groupBox1.Controls.Add(this.btnAllCompetition);
+            this.groupBox1.Controls.Add(this.btnTrainingSchedule);
+            this.groupBox1.Controls.Add(this.btnPerformanceRecord);
+            this.groupBox1.Location = new System.Drawing.Point(78, 72);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(506, 299);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Member dashboard";
             // 
             // FormMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.Ivory;
+            this.ClientSize = new System.Drawing.Size(671, 450);
+            this.Controls.Add(this.groupBox1);
             this.Name = "FormMember";
             this.Text = "FormMember";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnEnrollAndPay;
+        private System.Windows.Forms.Button btnUnenroll;
+        private System.Windows.Forms.Button btnTrainingSchedule;
+        private System.Windows.Forms.Button btnPerformanceRecord;
+        private System.Windows.Forms.Button btnAllCompetition;
+        private System.Windows.Forms.Button btnSendSuggestion;
+        private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
