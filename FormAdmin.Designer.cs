@@ -45,15 +45,13 @@
             this.lstBoxUsers = new System.Windows.Forms.ListBox();
             this.tabIncome = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstBoxCoaches = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -65,13 +63,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabCompetitions = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.lstParticipantRankings = new System.Windows.Forms.ListBox();
+            this.lstBoxParticipantRankings = new System.Windows.Forms.ListBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.lstCompetitions = new System.Windows.Forms.ListBox();
+            this.lstBoxCompetitions = new System.Windows.Forms.ListBox();
+            this.tabFeedback = new System.Windows.Forms.TabPage();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtBoxFeedbackMessage = new System.Windows.Forms.RichTextBox();
+            this.lstBoxFeedback = new System.Windows.Forms.ListBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.btnUpdateProfileCancel = new System.Windows.Forms.Button();
             this.btnUpdateProfileSave = new System.Windows.Forms.Button();
@@ -87,8 +92,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.txtBoxEditFullName = new System.Windows.Forms.TextBox();
             this.txtBoxEditEmail = new System.Windows.Forms.TextBox();
-            this.tabFeedback = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblFeedbackFrom = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tabIncome.SuspendLayout();
@@ -96,6 +101,7 @@
             this.groupBox1.SuspendLayout();
             this.tabCompetitions.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabFeedback.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -277,15 +283,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Controls.Add(this.lstBoxCoaches);
             this.groupBox2.Location = new System.Drawing.Point(311, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(393, 345);
@@ -293,31 +297,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Review Coach Income";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label18.Location = new System.Drawing.Point(219, 64);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(15, 21);
-            this.label18.TabIndex = 13;
-            this.label18.Text = " ";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(215, 37);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(116, 19);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Training Level";
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label17.Location = new System.Drawing.Point(219, 301);
+            this.label17.Location = new System.Drawing.Point(217, 228);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(71, 21);
             this.label17.TabIndex = 12;
@@ -327,7 +311,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Location = new System.Drawing.Point(219, 219);
+            this.label16.Location = new System.Drawing.Point(217, 146);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(71, 21);
             this.label16.TabIndex = 11;
@@ -337,7 +321,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Location = new System.Drawing.Point(219, 139);
+            this.label15.Location = new System.Drawing.Point(217, 66);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(20, 21);
             this.label15.TabIndex = 8;
@@ -347,7 +331,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(215, 268);
+            this.label14.Location = new System.Drawing.Point(213, 195);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(143, 19);
             this.label14.TabIndex = 10;
@@ -357,7 +341,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(215, 190);
+            this.label13.Location = new System.Drawing.Point(213, 117);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(133, 19);
             this.label13.TabIndex = 9;
@@ -367,20 +351,20 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(215, 112);
+            this.label12.Location = new System.Drawing.Point(213, 39);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 19);
             this.label12.TabIndex = 8;
             this.label12.Text = "Sessions";
             // 
-            // listBox1
+            // lstBoxCoaches
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 19;
-            this.listBox1.Location = new System.Drawing.Point(25, 39);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(170, 289);
-            this.listBox1.TabIndex = 1;
+            this.lstBoxCoaches.FormattingEnabled = true;
+            this.lstBoxCoaches.ItemHeight = 19;
+            this.lstBoxCoaches.Location = new System.Drawing.Point(25, 39);
+            this.lstBoxCoaches.Name = "lstBoxCoaches";
+            this.lstBoxCoaches.Size = new System.Drawing.Size(170, 289);
+            this.lstBoxCoaches.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -483,7 +467,7 @@
             // 
             this.tabCompetitions.Controls.Add(this.groupBox3);
             this.tabCompetitions.Controls.Add(this.label20);
-            this.tabCompetitions.Controls.Add(this.lstCompetitions);
+            this.tabCompetitions.Controls.Add(this.lstBoxCompetitions);
             this.tabCompetitions.Location = new System.Drawing.Point(4, 28);
             this.tabCompetitions.Name = "tabCompetitions";
             this.tabCompetitions.Size = new System.Drawing.Size(720, 388);
@@ -493,11 +477,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label30);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.label28);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.lstParticipantRankings);
+            this.groupBox3.Controls.Add(this.lstBoxParticipantRankings);
             this.groupBox3.Location = new System.Drawing.Point(251, 60);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(438, 289);
@@ -505,11 +491,31 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Competition Details";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label19.Location = new System.Drawing.Point(29, 148);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(15, 21);
+            this.label19.TabIndex = 12;
+            this.label19.Text = " ";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(25, 117);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(46, 19);
+            this.label30.TabIndex = 11;
+            this.label30.Text = "Date";
+            // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label29.Location = new System.Drawing.Point(29, 165);
+            this.label29.Location = new System.Drawing.Point(29, 225);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(15, 21);
             this.label29.TabIndex = 10;
@@ -539,20 +545,20 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(25, 134);
+            this.label21.Location = new System.Drawing.Point(25, 194);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 19);
             this.label21.TabIndex = 6;
             this.label21.Text = "Status";
             // 
-            // lstParticipantRankings
+            // lstBoxParticipantRankings
             // 
-            this.lstParticipantRankings.FormattingEnabled = true;
-            this.lstParticipantRankings.ItemHeight = 19;
-            this.lstParticipantRankings.Location = new System.Drawing.Point(224, 49);
-            this.lstParticipantRankings.Name = "lstParticipantRankings";
-            this.lstParticipantRankings.Size = new System.Drawing.Size(186, 213);
-            this.lstParticipantRankings.TabIndex = 4;
+            this.lstBoxParticipantRankings.FormattingEnabled = true;
+            this.lstBoxParticipantRankings.ItemHeight = 19;
+            this.lstBoxParticipantRankings.Location = new System.Drawing.Point(224, 49);
+            this.lstBoxParticipantRankings.Name = "lstBoxParticipantRankings";
+            this.lstBoxParticipantRankings.Size = new System.Drawing.Size(186, 213);
+            this.lstBoxParticipantRankings.TabIndex = 4;
             // 
             // label20
             // 
@@ -564,14 +570,67 @@
             this.label20.TabIndex = 3;
             this.label20.Text = "Competitions";
             // 
-            // lstCompetitions
+            // lstBoxCompetitions
             // 
-            this.lstCompetitions.FormattingEnabled = true;
-            this.lstCompetitions.ItemHeight = 19;
-            this.lstCompetitions.Location = new System.Drawing.Point(29, 60);
-            this.lstCompetitions.Name = "lstCompetitions";
-            this.lstCompetitions.Size = new System.Drawing.Size(201, 289);
-            this.lstCompetitions.TabIndex = 2;
+            this.lstBoxCompetitions.FormattingEnabled = true;
+            this.lstBoxCompetitions.ItemHeight = 19;
+            this.lstBoxCompetitions.Location = new System.Drawing.Point(29, 60);
+            this.lstBoxCompetitions.Name = "lstBoxCompetitions";
+            this.lstBoxCompetitions.Size = new System.Drawing.Size(201, 289);
+            this.lstBoxCompetitions.TabIndex = 2;
+            // 
+            // tabFeedback
+            // 
+            this.tabFeedback.Controls.Add(this.lblFeedbackFrom);
+            this.tabFeedback.Controls.Add(this.label31);
+            this.tabFeedback.Controls.Add(this.label18);
+            this.tabFeedback.Controls.Add(this.txtBoxFeedbackMessage);
+            this.tabFeedback.Controls.Add(this.lstBoxFeedback);
+            this.tabFeedback.Location = new System.Drawing.Point(4, 28);
+            this.tabFeedback.Name = "tabFeedback";
+            this.tabFeedback.Size = new System.Drawing.Size(720, 388);
+            this.tabFeedback.TabIndex = 5;
+            this.tabFeedback.Text = "Feedback";
+            this.tabFeedback.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(259, 56);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(54, 19);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "From:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(35, 24);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(87, 19);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "Feedback";
+            // 
+            // txtBoxFeedbackMessage
+            // 
+            this.txtBoxFeedbackMessage.Location = new System.Drawing.Point(263, 97);
+            this.txtBoxFeedbackMessage.Name = "txtBoxFeedbackMessage";
+            this.txtBoxFeedbackMessage.ReadOnly = true;
+            this.txtBoxFeedbackMessage.Size = new System.Drawing.Size(419, 184);
+            this.txtBoxFeedbackMessage.TabIndex = 4;
+            this.txtBoxFeedbackMessage.Text = "";
+            // 
+            // lstBoxFeedback
+            // 
+            this.lstBoxFeedback.FormattingEnabled = true;
+            this.lstBoxFeedback.ItemHeight = 19;
+            this.lstBoxFeedback.Location = new System.Drawing.Point(39, 56);
+            this.lstBoxFeedback.Name = "lstBoxFeedback";
+            this.lstBoxFeedback.Size = new System.Drawing.Size(201, 289);
+            this.lstBoxFeedback.TabIndex = 3;
+            this.lstBoxFeedback.SelectedIndexChanged += new System.EventHandler(this.lstBoxFeedback_SelectedIndexChanged);
             // 
             // tabSettings
             // 
@@ -726,15 +785,6 @@
             this.txtBoxEditEmail.TabIndex = 2;
             this.txtBoxEditEmail.TextChanged += new System.EventHandler(this.txtBoxEditEmail_TextChanged);
             // 
-            // tabFeedback
-            // 
-            this.tabFeedback.Location = new System.Drawing.Point(4, 28);
-            this.tabFeedback.Name = "tabFeedback";
-            this.tabFeedback.Size = new System.Drawing.Size(720, 388);
-            this.tabFeedback.TabIndex = 5;
-            this.tabFeedback.Text = "Feedback";
-            this.tabFeedback.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::IOOPAssignment_G12.Properties.Resources.Tennis_Logo;
@@ -745,6 +795,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblFeedbackFrom
+            // 
+            this.lblFeedbackFrom.AutoSize = true;
+            this.lblFeedbackFrom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFeedbackFrom.Location = new System.Drawing.Point(319, 56);
+            this.lblFeedbackFrom.Name = "lblFeedbackFrom";
+            this.lblFeedbackFrom.Size = new System.Drawing.Size(15, 21);
+            this.lblFeedbackFrom.TabIndex = 13;
+            this.lblFeedbackFrom.Text = " ";
             // 
             // frmAdmin
             // 
@@ -772,6 +832,8 @@
             this.tabCompetitions.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabFeedback.ResumeLayout(false);
+            this.tabFeedback.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -803,7 +865,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstBoxUsers;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstBoxCoaches;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
@@ -820,12 +882,10 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox lstParticipantRankings;
+        private System.Windows.Forms.ListBox lstBoxParticipantRankings;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ListBox lstCompetitions;
+        private System.Windows.Forms.ListBox lstBoxCompetitions;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
@@ -846,5 +906,12 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabFeedback;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.RichTextBox txtBoxFeedbackMessage;
+        private System.Windows.Forms.ListBox lstBoxFeedback;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblFeedbackFrom;
     }
 }
