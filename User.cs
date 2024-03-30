@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,21 +12,20 @@ namespace IOOPAssignment_G12
 {
     internal class User
     {
-        //User class is used only during login, requiring only username and password
-        //Role-specific methods and additional data are located in their respective classes
-
         private string _username;
         private string _password;
         private string _fullName;
         private string _email;
         private string _phone;
+        private string _role;
         static SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
 
         public string Username { get => _username; set => _username = value; }
         public string Password { get => _password; set => _password = value; }
-        public string RealName { get => _fullName; set => _fullName = value; }
+        public string FullName { get => _fullName; set => _fullName = value; }
         public string Email { get => _email; set => _email = value; }
         public string Phone { get => _phone; set => _phone = value; }
+        public string Role { get => _role; set => _role = value; }
 
         public User(string username, string password, string fullName, string email, string phone)
         {
@@ -38,6 +39,12 @@ namespace IOOPAssignment_G12
         {
             _username = username;
             _password = password;
+        }
+
+        //for use with ViewProfile
+        public User(string fullName)
+        {
+            _fullName = fullName;
         }
 
         public string Login()
@@ -76,10 +83,18 @@ namespace IOOPAssignment_G12
                         frmAdmin a = new frmAdmin(displayName);
                         a.Show();
                     }
-                    if (role == "member")
+                    if(role == "manager")
                     {
-                        FormMember m = new FormMember(displayName);
-                        m.Show();
+
+                    }
+                    if(role == "coach")
+                    {
+                        frmCoach c = new frmCoach();
+                        c.Show();
+                    }
+                    if(role == "member")
+                    {
+
                     }
                 }
             }
@@ -119,13 +134,163 @@ namespace IOOPAssignment_G12
             else
             {
                 int i = addUser.ExecuteNonQuery();
-                if (i != 0)
-                {
-                    status = "Successfully added user " + _username;
-                }
-                else
+                if (i == 0)
                 {
                     status = "Unable to add user " + _username;
+                }
+            }
+            conn.Close();
+            return status;
+        }
+
+        public static string DeleteUser(User user)
+        {
+            string status = null;
+            conn.Open();
+            //prepare sql command for deleting user
+            SqlCommand deleteUser = new SqlCommand("DELETE FROM users WHERE username=@u", conn);
+            deleteUser.Parameters.AddWithValue("@u", user.Username);
+
+            int i = deleteUser.ExecuteNonQuery();
+            if(i == 0)
+            {
+                status = "Unable to delete user " + user.Username;
+            }
+            conn.Close();
+            return status;
+        }
+
+        public static ArrayList ViewAll()
+        {
+            ArrayList users = new ArrayList();
+            conn.Open();
+            SqlCommand viewAllUsers = new SqlCommand("SELECT fullName FROM users", conn);
+            SqlDataReader rd = viewAllUsers.ExecuteReader();
+            while (rd.Read())
+            {
+                try
+                {
+                    users.Add(rd.GetString(0));
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            conn.Close();
+            return users;
+        }
+
+        public static void ViewProfile(User user)
+        {
+            conn.Open();
+            SqlCommand viewProfileByFullName = new SqlCommand("SELECT * FROM users WHERE fullName=@fn", conn);
+            viewProfileByFullName.Parameters.AddWithValue("@fn", user.FullName);
+            SqlDataReader rd = viewProfileByFullName.ExecuteReader();
+            if (rd.HasRows)
+            {
+                while (rd.Read())
+                {
+                    try
+                    {
+                        user.FullName = rd.GetString(3);
+                    }
+                    catch
+                    {
+                        user.FullName = string.Empty;
+                    }
+                    try
+                    {
+                        user.Email = rd.GetString(4);
+                    }
+                    catch
+                    {
+                        user.Email = string.Empty;
+                    }
+                    try
+                    {
+                        user.Phone = rd.GetString(5);
+                    }
+                    catch
+                    {
+                        user.Phone = string.Empty;
+                    }
+                    user.Username = rd.GetString(1);
+                    user.Password = rd.GetString(2);
+                    user.Role = rd.GetString(6);
+                }
+                rd.Close();
+            }
+            else
+            {
+                rd.Close();
+                //fallback: try search by username instead
+                SqlCommand viewProfileByUser = new SqlCommand("SELECT * FROM users WHERE username=@u", conn);
+                viewProfileByUser.Parameters.AddWithValue("@u", user.FullName);
+                SqlDataReader rd2 = viewProfileByUser.ExecuteReader();
+                while (rd2.Read())
+                {
+                    try
+                    {
+                        user.FullName = rd2.GetString(3);
+                    }
+                    catch
+                    {
+                        user.FullName = string.Empty;
+                    }
+                    try
+                    {
+                        user.Email = rd2.GetString(4);
+                    }
+                    catch
+                    {
+                        user.Email = string.Empty;
+                    }
+                    try
+                    {
+                        user.Phone = rd2.GetString(5);
+                    }
+                    catch
+                    {
+                        user.Phone = string.Empty;
+                    }
+                    user.Username = rd2.GetString(1);
+                    user.Password = rd2.GetString(2);
+                    user.Role = rd2.GetString(6);
+                }
+                rd2.Close();
+            }
+            conn.Close();
+        }
+
+        public static string UpdateProfile(User currentUser, string username, string password, string fullName, string email, string phone)
+        {
+            string status = null;
+            conn.Open();
+            //prepare sql command for updating profile
+            SqlCommand updateProfile = new SqlCommand("UPDATE users SET username=@un, password=@p, fullName=@fn, email=@e, phone=@ph WHERE username=@cu", conn);
+            updateProfile.Parameters.AddWithValue("@un", username);
+            updateProfile.Parameters.AddWithValue("@p", password);
+            updateProfile.Parameters.AddWithValue("@fn", fullName);
+            updateProfile.Parameters.AddWithValue("@e", email);
+            updateProfile.Parameters.AddWithValue("@ph", phone);
+            updateProfile.Parameters.AddWithValue("@cu", currentUser.Username);
+
+            //prepare sql command to check if username already exists
+            SqlCommand checkUsername = new SqlCommand("SELECT count(*) FROM users WHERE username=@u", conn);
+            checkUsername.Parameters.AddWithValue("@u", username);
+
+            int count = Convert.ToInt32(checkUsername.ExecuteScalar());
+            if(currentUser.Username != username && count > 0)
+            {
+                status = "Cannot update username, user of name " + username + " already exists.";
+            }
+            else
+            {
+                int i = updateProfile.ExecuteNonQuery();
+                if(i == 0)
+                {
+                    status = "Unable to update profile.";
                 }
             }
             conn.Close();
