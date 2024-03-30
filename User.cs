@@ -83,7 +83,19 @@ namespace IOOPAssignment_G12
                         frmAdmin a = new frmAdmin(displayName);
                         a.Show();
                     }
-                    //TODO: check for other roles and open their respective forms
+                    if(role == "manager")
+                    {
+
+                    }
+                    if(role == "coach")
+                    {
+                        frmCoach c = new frmCoach();
+                        c.Show();
+                    }
+                    if(role == "member")
+                    {
+
+                    }
                 }
             }
             else
