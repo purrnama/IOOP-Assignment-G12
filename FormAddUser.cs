@@ -49,9 +49,9 @@ namespace IOOPAssignment_G12
                 MessageBox.Show("Role not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(cBoxRole.SelectedItem.ToString() == "Admin")
+            User newUser = new User(txtBoxUsername.Text, txtBoxPassword.Text, txtBoxFullName.Text, txtBoxEmail.Text, txtBoxPhone.Text);
+            if (cBoxRole.SelectedItem.ToString() == "Admin")
             {
-                User newUser = new User(txtBoxUsername.Text, txtBoxPassword.Text, txtBoxFullName.Text, txtBoxEmail.Text, txtBoxPhone.Text);
                 string status = newUser.AddUser("admin");
                 if(status == null)
                 {
@@ -63,18 +63,19 @@ namespace IOOPAssignment_G12
                     MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            // TODO
             if (cBoxRole.SelectedItem.ToString() == "Coach")
             {
-                MessageBox.Show("TODO: AddCoach method", "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string status = newUser.AddUser("coach");
+                //TODO: Insert row to coach-specific table
             }
             if (cBoxRole.SelectedItem.ToString() == "Manager")
             {
-                MessageBox.Show("TODO: AddManager method", "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string status = newUser.AddUser("manager");
             }
             if (cBoxRole.SelectedItem.ToString() == "Member")
             {
-                MessageBox.Show("TODO: AddMember method", "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string status = newUser.AddUser("member");
+                //TODO: Insert row to member-specific table
             }
         }
 
