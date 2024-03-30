@@ -12,6 +12,9 @@ namespace IOOPAssignment_G12
 {
     public partial class frmManager : Form
     {
+        FormAddCompetition frmAddComp = new FormAddCompetition();
+        FormEditCompetition frmEditComp = new FormEditCompetition();
+        
         public frmManager()
         {
             InitializeComponent();
@@ -25,6 +28,16 @@ namespace IOOPAssignment_G12
         private void frmManager_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddCompetition_Click(object sender, EventArgs e)
+        {
+            frmAddComp.Show();
+        }
+
+        private void btnEditCompetition_Click(object sender, EventArgs e)
+        {
+            frmEditComp.Show();
         }
     }
 }
