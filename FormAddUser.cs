@@ -56,7 +56,7 @@ namespace IOOPAssignment_G12
                 if(status == null)
                 {
 
-                    MessageBox.Show("Successfully added user" + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully added admin " + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -76,7 +76,7 @@ namespace IOOPAssignment_G12
                 if (status == null)
                 {
 
-                    MessageBox.Show("Successfully added coach with base salary of RM500" + txtBoxUsername.Text, "Add Coach Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully added coach " + txtBoxUsername.Text + " with base salary of RM500", "Add Coach Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -86,10 +86,29 @@ namespace IOOPAssignment_G12
             if (cBoxRole.SelectedItem.ToString() == "Manager")
             {
                 string status = newUser.AddUser("manager");
+
+                if (status == null)
+                {
+
+                    MessageBox.Show("Successfully added manager " + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             if (cBoxRole.SelectedItem.ToString() == "Member")
             {
                 string status = newUser.AddUser("member");
+                if (status == null)
+                {
+
+                    MessageBox.Show("Successfully added member " + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
                 //TODO: Insert row to member-specific table
             }
         }
