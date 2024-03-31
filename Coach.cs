@@ -45,6 +45,36 @@ namespace IOOPAssignment_G12
             conn.Close();
             return status;
         }
+
+        public string GetCoachByName()
+        {
+            string status = null;
+            SqlCommand getCoach = new SqlCommand("SELECT salary FROM coaches WHERE username=@u", conn);
+            getCoach.Parameters.AddWithValue("@u", _username);
+
+            conn.Open();
+            SqlDataReader rd = getCoach.ExecuteReader();
+            if (rd.HasRows)
+            {
+                while (rd.Read())
+                {
+                    try
+                    {
+                        _salary = rd.GetDecimal(0);
+                    }
+                    catch
+                    {
+                        _salary = 0;
+                    }
+                }
+            }
+            else
+            {
+                status = "No coach data found with this username";
+            }
+            conn.Close();
+            return status;
+        }
     }
 
 }

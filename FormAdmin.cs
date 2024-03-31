@@ -324,5 +324,17 @@ namespace IOOPAssignment_G12
                 lblCompetitionStatus.Text = selected.getStatus();
             }
         }
+
+        private void lstBoxCoaches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            User selected = new User(lstBoxCoaches.SelectedItem.ToString());
+            User.ViewProfile(selected);
+            Coach selectedCoach = new Coach(selected.Username);
+            string status = selectedCoach.GetCoachByName();
+            if(status == null)
+            {
+                lblIncomeCoachSalary.Text = "RM" + selectedCoach.Salary.ToString("0.00");
+            }
+        }
     }
 }
