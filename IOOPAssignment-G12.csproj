@@ -49,9 +49,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,12 +67,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coach.cs" />
     <Compile Include="Competition.cs" />
-    <Compile Include="FormAddCompetition.cs">
+    <Compile Include="EnrollForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddCompetition.Designer.cs">
-      <DependentUpon>FormAddCompetition.cs</DependentUpon>
+    <Compile Include="EnrollForm.Designer.cs">
+      <DependentUpon>EnrollForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAddUser.cs">
       <SubType>Form</SubType>
@@ -77,23 +81,11 @@
     <Compile Include="FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAssignMembers.cs">
+    <Compile Include="FormCoach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAssignMembers.Designer.cs">
-      <DependentUpon>FormAssignMembers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDeleteCompetition.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDeleteCompetition.Designer.cs">
-      <DependentUpon>FormDeleteCompetition.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormEditCompetition.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEditCompetition.Designer.cs">
-      <DependentUpon>FormEditCompetition.cs</DependentUpon>
+    <Compile Include="FormCoach.Designer.cs">
+      <DependentUpon>FormCoach.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEditUser.cs">
       <SubType>Form</SubType>
@@ -113,23 +105,68 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManager.cs">
+    <Compile Include="FormMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManager.Designer.cs">
-      <DependentUpon>FormManager.cs</DependentUpon>
+    <Compile Include="FormMember.Designer.cs">
+      <DependentUpon>FormMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRecordResult.cs">
+    <Compile Include="FormPaymentView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRecordResult.Designer.cs">
-      <DependentUpon>FormRecordResult.cs</DependentUpon>
+    <Compile Include="FormRecommendation.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdate.Designer.cs">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs" />
+    <Compile Include="Participant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sendSuggestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sendSuggestionForm.Designer.cs">
+      <DependentUpon>sendSuggestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Suggestion.cs" />
+    <Compile Include="UnenrollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnenrollForm.Designer.cs">
+      <DependentUpon>UnenrollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateProfileForm.Designer.cs">
+      <DependentUpon>updateProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="FormAddCompetition.resx">
-      <DependentUpon>FormAddCompetition.cs</DependentUpon>
+    <Compile Include="viewCompetitionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewCompetitionsForm.Designer.cs">
+      <DependentUpon>viewCompetitionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPerformanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPerformanceForm.Designer.cs">
+      <DependentUpon>ViewPerformanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewScheduleForm.Designer.cs">
+      <DependentUpon>ViewScheduleForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EnrollForm.resx">
+      <DependentUpon>EnrollForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
@@ -137,14 +174,8 @@
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAssignMembers.resx">
-      <DependentUpon>FormAssignMembers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDeleteCompetition.resx">
-      <DependentUpon>FormDeleteCompetition.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormEditCompetition.resx">
-      <DependentUpon>FormEditCompetition.cs</DependentUpon>
+    <EmbeddedResource Include="FormCoach.resx">
+      <DependentUpon>FormCoach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditUser.resx">
       <DependentUpon>FormEditUser.cs</DependentUpon>
@@ -152,11 +183,17 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManager.resx">
-      <DependentUpon>FormManager.cs</DependentUpon>
+    <EmbeddedResource Include="FormMember.resx">
+      <DependentUpon>FormMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRecordResult.resx">
-      <DependentUpon>FormRecordResult.cs</DependentUpon>
+    <EmbeddedResource Include="FormPaymentView.resx">
+      <DependentUpon>FormPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecommendation.resx">
+      <DependentUpon>FormRecommendation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdate.resx">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,7 +205,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sendSuggestionForm.resx">
+      <DependentUpon>sendSuggestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnenrollForm.resx">
+      <DependentUpon>UnenrollForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateProfileForm.resx">
+      <DependentUpon>updateProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewCompetitionsForm.resx">
+      <DependentUpon>viewCompetitionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPerformanceForm.resx">
+      <DependentUpon>ViewPerformanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewScheduleForm.resx">
+      <DependentUpon>ViewScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -187,7 +243,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\addcompetition vector.png" />
+    <None Include="Resources\Tennis Logo gray_transparent.png" />
     <None Include="Resources\Tennis Logo.png" />
   </ItemGroup>
   <ItemGroup>

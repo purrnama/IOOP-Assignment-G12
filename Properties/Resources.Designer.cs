@@ -79,5 +79,15 @@ namespace IOOPAssignment_G12.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tennis_Logo_gray_transparent {
+            get {
+                object obj = ResourceManager.GetObject("Tennis Logo gray_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
