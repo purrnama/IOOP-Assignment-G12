@@ -94,6 +94,8 @@
             this.txtBoxEditEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblFeedbackFrom = new System.Windows.Forms.Label();
+            this.lblFeedbackSubject = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tabIncome.SuspendLayout();
@@ -581,6 +583,8 @@
             // 
             // tabFeedback
             // 
+            this.tabFeedback.Controls.Add(this.lblFeedbackSubject);
+            this.tabFeedback.Controls.Add(this.label33);
             this.tabFeedback.Controls.Add(this.lblFeedbackFrom);
             this.tabFeedback.Controls.Add(this.label31);
             this.tabFeedback.Controls.Add(this.label18);
@@ -615,10 +619,10 @@
             // 
             // txtBoxFeedbackMessage
             // 
-            this.txtBoxFeedbackMessage.Location = new System.Drawing.Point(263, 97);
+            this.txtBoxFeedbackMessage.Location = new System.Drawing.Point(263, 124);
             this.txtBoxFeedbackMessage.Name = "txtBoxFeedbackMessage";
             this.txtBoxFeedbackMessage.ReadOnly = true;
-            this.txtBoxFeedbackMessage.Size = new System.Drawing.Size(419, 184);
+            this.txtBoxFeedbackMessage.Size = new System.Drawing.Size(419, 221);
             this.txtBoxFeedbackMessage.TabIndex = 4;
             this.txtBoxFeedbackMessage.Text = "";
             // 
@@ -800,11 +804,31 @@
             // 
             this.lblFeedbackFrom.AutoSize = true;
             this.lblFeedbackFrom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFeedbackFrom.Location = new System.Drawing.Point(319, 56);
+            this.lblFeedbackFrom.Location = new System.Drawing.Point(346, 56);
             this.lblFeedbackFrom.Name = "lblFeedbackFrom";
             this.lblFeedbackFrom.Size = new System.Drawing.Size(15, 21);
             this.lblFeedbackFrom.TabIndex = 13;
             this.lblFeedbackFrom.Text = " ";
+            // 
+            // lblFeedbackSubject
+            // 
+            this.lblFeedbackSubject.AutoSize = true;
+            this.lblFeedbackSubject.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFeedbackSubject.Location = new System.Drawing.Point(346, 87);
+            this.lblFeedbackSubject.Name = "lblFeedbackSubject";
+            this.lblFeedbackSubject.Size = new System.Drawing.Size(15, 21);
+            this.lblFeedbackSubject.TabIndex = 15;
+            this.lblFeedbackSubject.Text = " ";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(259, 87);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(75, 19);
+            this.label33.TabIndex = 14;
+            this.label33.Text = "Subject:";
             // 
             // frmAdmin
             // 
@@ -913,5 +937,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label lblFeedbackFrom;
+        private System.Windows.Forms.Label lblFeedbackSubject;
+        private System.Windows.Forms.Label label33;
     }
 }

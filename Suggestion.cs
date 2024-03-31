@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -10,18 +11,18 @@ namespace IOOPAssignment_G12
 {
     internal class Suggestion
     {
-        private int _id;
         private string _username;
+        private string _subject;
         private string _message;
         static SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
 
-        public int Id { get => _id; set => _id = value; }
         public string Username { get => _username; set => _username = value; }
         public string Message { get => _message; set => _message = value; }
+        public string Subject { get => _subject; set => _subject = value; }
 
-        public Suggestion(int id)
+        public Suggestion(string subject)
         {
-            _id = id;
+            _subject = subject;
         }
         public Suggestion(string username, string message)
         {
@@ -29,11 +30,32 @@ namespace IOOPAssignment_G12
             _message = message;
         }
 
-        public string getSuggestionById()
+        public static ArrayList viewAll()
+        {
+            ArrayList sugs = new ArrayList();
+            SqlCommand listFb = new SqlCommand("SELECT subject FROM suggestions", conn);
+            conn.Open();
+            SqlDataReader rd = listFb.ExecuteReader();
+            while (rd.Read())
+            {
+                try
+                {
+                    sugs.Add(rd.GetString(0));
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            conn.Close();
+            return sugs;
+        }
+
+        public string getSuggestionBySubject()
         {
             string status = null;
-            SqlCommand getMsg = new SqlCommand("SELECT username, message FROM suggestions WHERE id=@i", conn);
-            getMsg.Parameters.AddWithValue("@i", _id);
+            SqlCommand getMsg = new SqlCommand("SELECT username, message FROM suggestions WHERE subject=@s", conn);
+            getMsg.Parameters.AddWithValue("@s", _subject);
 
             conn.Open();
             SqlDataReader rd = getMsg.ExecuteReader();
@@ -60,7 +82,7 @@ namespace IOOPAssignment_G12
                 }
             } else
             {
-                status = "No suggestion data found with this id";
+                status = "No suggestion data found with this subject";
             }
             conn.Close();
             return status;

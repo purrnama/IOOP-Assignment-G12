@@ -98,26 +98,7 @@ namespace IOOPAssignment_G12
             if (tabControl1.SelectedIndex == 4)
             {
                 lstBoxFeedback.Items.Clear();
-                ArrayList feedbacks = new ArrayList();
-                //TODO: put this in Suggestions class
-                //BEGIN
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
-                SqlCommand listFb = new SqlCommand("SELECT id FROM suggestions", conn);
-                conn.Open();
-                SqlDataReader rd = listFb.ExecuteReader();
-                while (rd.Read())
-                {
-                    try
-                    {
-                        feedbacks.Add(rd.GetInt32(0));
-                    }
-                    catch
-                    {
-                        continue;
-                    }
-                }
-                conn.Close();
-                //END
+                ArrayList feedbacks = Suggestion.viewAll();
                 foreach(var feedback in feedbacks)
                 {
                     lstBoxFeedback.Items.Add(feedback);
@@ -153,11 +134,12 @@ namespace IOOPAssignment_G12
         }
         private void lstBoxFeedback_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Suggestion selected = new Suggestion(int.Parse(lstBoxFeedback.SelectedItem.ToString()));
-            string status = selected.getSuggestionById();
+            Suggestion selected = new Suggestion(lstBoxFeedback.SelectedItem.ToString());
+            string status = selected.getSuggestionBySubject();
             if(status == null)
             {
                 lblFeedbackFrom.Text = selected.Username;
+                lblFeedbackSubject.Text = selected.Subject;
                 txtBoxFeedbackMessage.Text = selected.Message;
             }
         }
