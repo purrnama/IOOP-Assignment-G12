@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 public class Member
 {
-    private string connectionString;
     private string _username;
     private string _trainingLevel;
     private bool _paid;
+    static SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString.ToString());
 
     public string Username { get => _username; set => _username = value; }
     public string TrainingLevel { get => _trainingLevel; set => _trainingLevel = value; }
@@ -17,26 +17,24 @@ public class Member
 
     public Member()
     {
-        connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
     }
     public Member(string username)
     {
-        connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
         _username = username;
     }
 
     public void EnrollInTraining(string trainingLevel)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (conn)
         {
             string query = "UPDATE Members SET trainingLevel=@tl WHERE username=@u";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@u", _username);
                 command.Parameters.AddWithValue("@tl", trainingLevel);
 
-                connection.Open();
+                conn.Open();
                 command.ExecuteNonQuery();
             }
         }
@@ -44,16 +42,14 @@ public class Member
 
     public void UnenrollFromTraining(string username, string trainingLevel)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (conn)
         {
-            string query = "DELETE FROM Members WHERE username = @username AND trainingLevel = @trainingLevel";
+            string query = "UPDATE Members SET trainingLevel=NULL WHERE username=@username";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@username", username);
-                command.Parameters.AddWithValue("@trainingLevel", trainingLevel);
-
-                connection.Open();
+                conn.Open();
                 command.ExecuteNonQuery();
             }
         }
@@ -63,15 +59,15 @@ public class Member
     {
         List<string> schedule = new List<string>();
 
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (conn)
         {
             string query = "SELECT Training.trainingLevel, Training.date FROM Trainings JOIN Members on Training.trainingLevel = Members.trainingLevel where Members.username = @username ";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@username", _username);
 
-                connection.Open();
+                conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -91,15 +87,15 @@ public class Member
     {
         int performance = 0;
 
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (conn)
         {
             string query = "SELECT performance FROM Members WHERE username = @username";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@username", username);
 
-                connection.Open();
+                conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
@@ -117,13 +113,13 @@ public class Member
     {
         List<string> competitions = new List<string>();
 
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (conn)
         {
             string query = "SELECT competitionName, date FROM Competitions ";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query, conn))
             {
-                connection.Open();
+                conn.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -139,18 +135,19 @@ public class Member
         return competitions;
     }
 
-    public void SendSuggestion(string username, string message)
+    public void SendSuggestion(string username, string subject, string message)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (conn)
         {
-            string query = "INSERT INTO Suggestions (username, message) VALUES (@username, @message)";
+            string query = "INSERT INTO Suggestions (username, subject, message) VALUES (@username, @subject, @message)";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@subject", subject);
                 command.Parameters.AddWithValue("@message", message);
 
-                connection.Open();
+                conn.Open();
                 command.ExecuteNonQuery();
             }
         }
@@ -158,17 +155,17 @@ public class Member
 
     public void UpdateProfile(string username, string email, string phone)
     {
-        using (SqlConnection connection = new SqlConnection(connectionString))
+        using (conn)
         {
             string query = "UPDATE Users SET email = @email, phone = @phone WHERE username = @username";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand command = new SqlCommand(query, conn))
             {
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@email", email);
                 command.Parameters.AddWithValue("@phone", phone);
 
-                connection.Open();
+                conn.Open();
                 command.ExecuteNonQuery();
             }
         }

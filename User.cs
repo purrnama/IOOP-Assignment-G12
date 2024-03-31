@@ -88,10 +88,6 @@ namespace IOOPAssignment_G12
                         frmManager frmManager = new frmManager(displayName);
                         frmManager.Show();
                     }
-                    if(role == "manager")
-                    {
-
-                    }
                     if(role == "coach")
                     {
                         frmCoach c = new frmCoach(displayName);
