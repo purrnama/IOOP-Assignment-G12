@@ -313,5 +313,16 @@ namespace IOOPAssignment_G12
                 frmEditUser.ShowDialog();
             }
         }
+
+        private void lstBoxCompetitions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Competition selected = new Competition(lstBoxCompetitions.SelectedItem.ToString());
+            string status = selected.getCompetitionByName();
+            if(status == null)
+            {
+                lblCompetitionDate.Text = selected.Date.ToShortDateString();
+                lblCompetitionStatus.Text = selected.getStatus();
+            }
+        }
     }
 }
