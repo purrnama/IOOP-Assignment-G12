@@ -31,6 +31,7 @@
             this.comLevel = new System.Windows.Forms.ComboBox();
             this.lblLevel = new System.Windows.Forms.Label();
             this.btnEnroll = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comLevel
@@ -64,11 +65,23 @@
             this.btnEnroll.UseVisualStyleBackColor = true;
             this.btnEnroll.Click += new System.EventHandler(this.btnEnroll_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Elephant", 16.2F);
+            this.label1.Location = new System.Drawing.Point(170, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 37);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Enroll Page";
+            // 
             // EnrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(644, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEnroll);
             this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.comLevel);
@@ -83,5 +96,6 @@
         private System.Windows.Forms.ComboBox comLevel;
         private System.Windows.Forms.Label lblLevel;
         private System.Windows.Forms.Button btnEnroll;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -94,7 +94,8 @@ namespace IOOPAssignment_G12
                     }
                     if(role == "member")
                     {
-
+                        FormMember formMember = new FormMember(_username);
+                        formMember.Show();
                     }
                 }
             }

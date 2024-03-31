@@ -57,6 +57,7 @@
             this.btnUnenroll.TabIndex = 0;
             this.btnUnenroll.Text = "Unenroll";
             this.btnUnenroll.UseVisualStyleBackColor = true;
+            this.btnUnenroll.Click += new System.EventHandler(this.btnUnenroll_Click_1);
             // 
             // btnTrainingSchedule
             // 
@@ -66,6 +67,7 @@
             this.btnTrainingSchedule.TabIndex = 0;
             this.btnTrainingSchedule.Text = "Training Schedule";
             this.btnTrainingSchedule.UseVisualStyleBackColor = true;
+            this.btnTrainingSchedule.Click += new System.EventHandler(this.btnTrainingSchedule_Click);
             // 
             // btnPerformanceRecord
             // 
@@ -75,6 +77,7 @@
             this.btnPerformanceRecord.TabIndex = 0;
             this.btnPerformanceRecord.Text = "Performance Record";
             this.btnPerformanceRecord.UseVisualStyleBackColor = true;
+            this.btnPerformanceRecord.Click += new System.EventHandler(this.btnPerformanceRecord_Click);
             // 
             // btnAllCompetition
             // 
@@ -84,6 +87,7 @@
             this.btnAllCompetition.TabIndex = 0;
             this.btnAllCompetition.Text = "All Competition";
             this.btnAllCompetition.UseVisualStyleBackColor = true;
+            this.btnAllCompetition.Click += new System.EventHandler(this.btnAllCompetition_Click);
             // 
             // btnSendSuggestion
             // 
@@ -103,6 +107,7 @@
             this.btnUpdateProfile.TabIndex = 0;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
             // 
             // groupBox1
             // 
@@ -124,11 +129,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Ivory;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(671, 450);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormMember";
             this.Text = "FormMember";
+            this.Load += new System.EventHandler(this.FormMember_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
