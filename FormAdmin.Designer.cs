@@ -45,8 +45,8 @@
             this.lstBoxUsers = new System.Windows.Forms.ListBox();
             this.tabIncome = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblIncomeCoachFees = new System.Windows.Forms.Label();
+            this.lblIncomeCoachSalary = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -285,8 +285,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.lblIncomeCoachFees);
+            this.groupBox2.Controls.Add(this.lblIncomeCoachSalary);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
@@ -299,25 +299,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Review Coach Income";
             // 
-            // label17
+            // lblIncomeCoachFees
             // 
-            this.label17.AutoSize = true;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label17.Location = new System.Drawing.Point(217, 228);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 21);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "RM 0.00";
+            this.lblIncomeCoachFees.AutoSize = true;
+            this.lblIncomeCoachFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIncomeCoachFees.Location = new System.Drawing.Point(217, 228);
+            this.lblIncomeCoachFees.Name = "lblIncomeCoachFees";
+            this.lblIncomeCoachFees.Size = new System.Drawing.Size(71, 21);
+            this.lblIncomeCoachFees.TabIndex = 12;
+            this.lblIncomeCoachFees.Text = "RM 0.00";
             // 
-            // label16
+            // lblIncomeCoachSalary
             // 
-            this.label16.AutoSize = true;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Location = new System.Drawing.Point(217, 146);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(71, 21);
-            this.label16.TabIndex = 11;
-            this.label16.Text = "RM 0.00";
+            this.lblIncomeCoachSalary.AutoSize = true;
+            this.lblIncomeCoachSalary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIncomeCoachSalary.Location = new System.Drawing.Point(217, 146);
+            this.lblIncomeCoachSalary.Name = "lblIncomeCoachSalary";
+            this.lblIncomeCoachSalary.Size = new System.Drawing.Size(71, 21);
+            this.lblIncomeCoachSalary.TabIndex = 11;
+            this.lblIncomeCoachSalary.Text = "RM 0.00";
             // 
             // label15
             // 
@@ -335,9 +335,9 @@
             this.label14.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(213, 195);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(143, 19);
+            this.label14.Size = new System.Drawing.Size(128, 19);
             this.label14.TabIndex = 10;
-            this.label14.Text = "Current Earnings";
+            this.label14.Text = "Collected Fees";
             // 
             // label13
             // 
@@ -345,9 +345,9 @@
             this.label13.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(213, 117);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(133, 19);
+            this.label13.Size = new System.Drawing.Size(60, 19);
             this.label13.TabIndex = 9;
-            this.label13.Text = "Fee per Training";
+            this.label13.Text = "Salary";
             // 
             // label12
             // 
@@ -367,6 +367,7 @@
             this.lstBoxCoaches.Name = "lstBoxCoaches";
             this.lstBoxCoaches.Size = new System.Drawing.Size(170, 289);
             this.lstBoxCoaches.TabIndex = 1;
+            this.lstBoxCoaches.SelectedIndexChanged += new System.EventHandler(this.lstBoxCoaches_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -901,8 +902,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblIncomeCoachFees;
+        private System.Windows.Forms.Label lblIncomeCoachSalary;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
