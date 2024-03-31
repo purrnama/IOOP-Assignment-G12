@@ -112,6 +112,10 @@ namespace IOOPAssignment_G12
 
         private void lstBoxUsers_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
             User selected = new User(lstBoxUsers.SelectedItem.ToString());
             User.ViewProfile(selected);
 
@@ -134,6 +138,10 @@ namespace IOOPAssignment_G12
         }
         private void lstBoxFeedback_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
             Suggestion selected = new Suggestion(lstBoxFeedback.SelectedItem.ToString());
             string status = selected.getSuggestionBySubject();
             if(status == null)
@@ -316,6 +324,10 @@ namespace IOOPAssignment_G12
 
         private void lstBoxCompetitions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
             Competition selected = new Competition(lstBoxCompetitions.SelectedItem.ToString());
             string status = selected.getCompetitionByName();
             if(status == null)
@@ -323,10 +335,24 @@ namespace IOOPAssignment_G12
                 lblCompetitionDate.Text = selected.Date.ToShortDateString();
                 lblCompetitionStatus.Text = selected.getStatus();
             }
+            ArrayList participants = selected.getParticipants();
+            lblCompetitionParticipants.Text = participants.Count.ToString();
+            lstBoxParticipantRankings.Items.Clear();
+            foreach (Participant p in participants)
+            {
+                User pUser = new User(p.Username);
+                User.ViewProfile(pUser);
+                string item = pUser.FullName + (p.Results == null ? "" : " - " + p.Results);
+                lstBoxParticipantRankings.Items.Add(item);
+            }
         }
 
         private void lstBoxCoaches_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
             User selected = new User(lstBoxCoaches.SelectedItem.ToString());
             User.ViewProfile(selected);
             Coach selectedCoach = new Coach(selected.Username);
