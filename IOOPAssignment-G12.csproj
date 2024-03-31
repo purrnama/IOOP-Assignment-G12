@@ -143,6 +143,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Tennis Logo gray_transparent.png" />
     <None Include="Resources\Tennis Logo.png" />
   </ItemGroup>
   <ItemGroup>
