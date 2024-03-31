@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 public class Member
 {
@@ -58,17 +59,17 @@ public class Member
         }
     }
 
-    public List<string> ViewTrainingSchedule(string username)
+    public List<string> ViewTrainingSchedule()
     {
         List<string> schedule = new List<string>();
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "SELECT trainingLevel, date FROM Trainings WHERE coachUsername = @username";
+            string query = "SELECT Training.trainingLevel, Training.date FROM Trainings JOIN Members on Training.trainingLevel = Members.trainingLevel where Members.username = @username ";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@username", _username);
 
                 connection.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -118,7 +119,7 @@ public class Member
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "SELECT competitionName, date FROM Competitions";
+            string query = "SELECT competitionName, date FROM Competitions ";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {

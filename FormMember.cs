@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IOOPAssignment_G12
 {
     public partial class FormMember: Form
     {
+        private string username;
+
         Member currentMember;
+
         public FormMember()
         {
             InitializeComponent();
@@ -27,40 +31,46 @@ namespace IOOPAssignment_G12
             EnrollForm enrollForm = new EnrollForm(currentMember);
             enrollForm.Show();
         }
-        private void unenrollButton_Click(object sender, EventArgs e)
+        private void btnSendSuggestion_Click(object sender, EventArgs e)
         {
-            UnenrollForm unenrollForm = new UnenrollForm();
-            unenrollForm.Show();
+            sendSuggestionForm sendSuggestionForm = new sendSuggestionForm(currentMember.Username);
+            sendSuggestionForm.Show();
+        }
+        private void btnUnenroll_Click_1(object sender, EventArgs e)
+        {
+            UnenrollForm unenroll = new UnenrollForm(currentMember);
+            unenroll.Show();
         }
 
-        private void viewScheduleButton_Click(object sender, EventArgs e)
+        private void FormMember_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateProfile_Click(object sender, EventArgs e)
+        {
+            updateProfileForm updateForm = new updateProfileForm();
+            updateForm.ShowDialog();
+        }
+
+        private void btnTrainingSchedule_Click(object sender, EventArgs e)
         {
             ViewScheduleForm viewScheduleForm = new ViewScheduleForm();
             viewScheduleForm.Show();
         }
 
-        private void viewPerformanceButton_Click(object sender, EventArgs e)
+        private void btnPerformanceRecord_Click(object sender, EventArgs e)
         {
-            ViewPerformanceForm viewPerformanceForm = new ViewPerformanceForm();
-            viewPerformanceForm.Show();
+            // Assuming 'currentMember' is an object of the 'Member' class representing the logged-in user.
+            ViewPerformanceForm performanceForm = new ViewPerformanceForm(currentMember);
+            performanceForm.ShowDialog();
         }
 
-        private void viewCompetitionsButton_Click(object sender, EventArgs e)
+        private void btnAllCompetition_Click(object sender, EventArgs e)
         {
-            viewCompetitionsForm viewCompetitionsForm = new viewCompetitionsForm();
-            viewCompetitionsForm.Show();
-        }
-
-        private void updateProfileButton_Click(object sender, EventArgs e)
-        {
-            updateProfileForm updateProfileForm = new updateProfileForm();
-            updateProfileForm.Show();
-        }
-
-        private void btnSendSuggestion_Click(object sender, EventArgs e)
-        {
-            sendSuggestionForm sendSuggestionForm = new sendSuggestionForm(currentMember.Username);
-            sendSuggestionForm.Show();
+            // Assuming you have a 'member' object for the logged-in member
+            ViewCompetitionsForm competitionsForm = new ViewCompetitionsForm(currentMember);
+            competitionsForm.ShowDialog();
         }
     }
 }
