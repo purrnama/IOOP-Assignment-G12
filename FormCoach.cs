@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace IOOPAssignment_G12
 {
-    public partial class FormCoach : Form
+    public partial class frmCoach : Form
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Source\\Repos\\IOOP-Assignment-G12\\DB.mdf;Integrated Security=True";
         private DataTable dataTable = new DataTable();
         private string loggedInUser;
 
-        public FormCoach(string displayname)
+        public frmCoach(string displayname)
         {
             InitializeComponent();
             connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
