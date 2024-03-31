@@ -50,11 +50,11 @@ namespace IOOPAssignment_G12
         public string Login()
         {
             string status = null;
-            conn.Open();
             SqlCommand getUser = new SqlCommand("select count(*) from users where username=@u and password=@p", conn);
             getUser.Parameters.AddWithValue("@u", _username);
             getUser.Parameters.AddWithValue("@p", _password);
 
+            conn.Open();
             int count = Convert.ToInt32(getUser.ExecuteScalar());
             if(count > 0)
             {
@@ -83,7 +83,19 @@ namespace IOOPAssignment_G12
                         frmAdmin a = new frmAdmin(displayName);
                         a.Show();
                     }
-                    //TODO: check for other roles and open their respective forms
+                    if(role == "manager")
+                    {
+
+                    }
+                    if(role == "coach")
+                    {
+                        frmCoach c = new frmCoach();
+                        c.Show();
+                    }
+                    if(role == "member")
+                    {
+
+                    }
                 }
             }
             else
@@ -99,8 +111,6 @@ namespace IOOPAssignment_G12
         public string AddUser(string role)
         {
             string status = null;
-            conn.Open();
-
             //prepare SQL command for adding new user
             SqlCommand addUser = new SqlCommand("INSERT INTO Users(username, password, fullName, email, phone, role) VALUES(@u, @p, @rn, @e, @ph, @r)", conn);
             addUser.Parameters.AddWithValue("@u", _username);
@@ -114,6 +124,7 @@ namespace IOOPAssignment_G12
             SqlCommand checkUsername = new SqlCommand("SELECT count(*) FROM users WHERE username=@u", conn);
             checkUsername.Parameters.AddWithValue("@u", _username);
 
+            conn.Open();
             int count = Convert.ToInt32(checkUsername.ExecuteScalar());
             if (count > 0)
             {
@@ -134,11 +145,11 @@ namespace IOOPAssignment_G12
         public static string DeleteUser(User user)
         {
             string status = null;
-            conn.Open();
             //prepare sql command for deleting user
             SqlCommand deleteUser = new SqlCommand("DELETE FROM users WHERE username=@u", conn);
             deleteUser.Parameters.AddWithValue("@u", user.Username);
 
+            conn.Open();
             int i = deleteUser.ExecuteNonQuery();
             if(i == 0)
             {
@@ -148,12 +159,22 @@ namespace IOOPAssignment_G12
             return status;
         }
 
-        public static ArrayList ViewAll()
+        public static ArrayList ViewAll(string role = null)
         {
             ArrayList users = new ArrayList();
             conn.Open();
-            SqlCommand viewAllUsers = new SqlCommand("SELECT fullName FROM users", conn);
-            SqlDataReader rd = viewAllUsers.ExecuteReader();
+
+            SqlCommand viewAll;
+            if(role != null)
+            {
+                viewAll = new SqlCommand("SELECT fullName FROM users WHERE role=@r", conn);
+                viewAll.Parameters.AddWithValue("@r", role);
+            }
+            else
+            {
+                viewAll = new SqlCommand("SELECT fullName FROM users", conn);
+            }
+            SqlDataReader rd = viewAll.ExecuteReader();
             while (rd.Read())
             {
                 try
@@ -171,9 +192,9 @@ namespace IOOPAssignment_G12
 
         public static void ViewProfile(User user)
         {
-            conn.Open();
             SqlCommand viewProfileByFullName = new SqlCommand("SELECT * FROM users WHERE fullName=@fn", conn);
             viewProfileByFullName.Parameters.AddWithValue("@fn", user.FullName);
+            conn.Open();
             SqlDataReader rd = viewProfileByFullName.ExecuteReader();
             if (rd.HasRows)
             {

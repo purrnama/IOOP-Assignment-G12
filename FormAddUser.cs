@@ -49,32 +49,67 @@ namespace IOOPAssignment_G12
                 MessageBox.Show("Role not selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if(cBoxRole.SelectedItem.ToString() == "Admin")
+            User newUser = new User(txtBoxUsername.Text, txtBoxPassword.Text, txtBoxFullName.Text, txtBoxEmail.Text, txtBoxPhone.Text);
+            if (cBoxRole.SelectedItem.ToString() == "Admin")
             {
-                User newUser = new User(txtBoxUsername.Text, txtBoxPassword.Text, txtBoxFullName.Text, txtBoxEmail.Text, txtBoxPhone.Text);
                 string status = newUser.AddUser("admin");
                 if(status == null)
                 {
 
-                    MessageBox.Show("Successfully added user" + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Successfully added admin " + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            // TODO
             if (cBoxRole.SelectedItem.ToString() == "Coach")
             {
-                MessageBox.Show("TODO: AddCoach method", "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string status = newUser.AddUser("coach");
+                if(status != null)
+                {
+                    MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                Coach newCoach = new Coach(txtBoxUsername.Text, 500);
+                string coachStatus = newCoach.AddCoach();
+                if (status == null)
+                {
+
+                    MessageBox.Show("Successfully added coach " + txtBoxUsername.Text + " with base salary of RM500", "Add Coach Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add Coach Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             if (cBoxRole.SelectedItem.ToString() == "Manager")
             {
-                MessageBox.Show("TODO: AddManager method", "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string status = newUser.AddUser("manager");
+
+                if (status == null)
+                {
+
+                    MessageBox.Show("Successfully added manager " + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             if (cBoxRole.SelectedItem.ToString() == "Member")
             {
-                MessageBox.Show("TODO: AddMember method", "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string status = newUser.AddUser("member");
+                if (status == null)
+                {
+
+                    MessageBox.Show("Successfully added member " + txtBoxUsername.Text, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                //TODO: Insert row to member-specific table
             }
         }
 
