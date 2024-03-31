@@ -63,9 +63,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabCompetitions = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblCompetitionDate = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lblCompetitionStatus = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -73,6 +73,9 @@
             this.label20 = new System.Windows.Forms.Label();
             this.lstBoxCompetitions = new System.Windows.Forms.ListBox();
             this.tabFeedback = new System.Windows.Forms.TabPage();
+            this.lblFeedbackSubject = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.lblFeedbackFrom = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txtBoxFeedbackMessage = new System.Windows.Forms.RichTextBox();
@@ -93,9 +96,6 @@
             this.txtBoxEditFullName = new System.Windows.Forms.TextBox();
             this.txtBoxEditEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblFeedbackFrom = new System.Windows.Forms.Label();
-            this.lblFeedbackSubject = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabUsers.SuspendLayout();
             this.tabIncome.SuspendLayout();
@@ -479,9 +479,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.lblCompetitionDate);
             this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.lblCompetitionStatus);
             this.groupBox3.Controls.Add(this.label28);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label21);
@@ -493,15 +493,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Competition Details";
             // 
-            // label19
+            // lblCompetitionDate
             // 
-            this.label19.AutoSize = true;
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label19.Location = new System.Drawing.Point(29, 148);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(15, 21);
-            this.label19.TabIndex = 12;
-            this.label19.Text = " ";
+            this.lblCompetitionDate.AutoSize = true;
+            this.lblCompetitionDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCompetitionDate.Location = new System.Drawing.Point(29, 148);
+            this.lblCompetitionDate.Name = "lblCompetitionDate";
+            this.lblCompetitionDate.Size = new System.Drawing.Size(15, 21);
+            this.lblCompetitionDate.TabIndex = 12;
+            this.lblCompetitionDate.Text = " ";
             // 
             // label30
             // 
@@ -513,15 +513,15 @@
             this.label30.TabIndex = 11;
             this.label30.Text = "Date";
             // 
-            // label29
+            // lblCompetitionStatus
             // 
-            this.label29.AutoSize = true;
-            this.label29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label29.Location = new System.Drawing.Point(29, 225);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(15, 21);
-            this.label29.TabIndex = 10;
-            this.label29.Text = " ";
+            this.lblCompetitionStatus.AutoSize = true;
+            this.lblCompetitionStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCompetitionStatus.Location = new System.Drawing.Point(29, 225);
+            this.lblCompetitionStatus.Name = "lblCompetitionStatus";
+            this.lblCompetitionStatus.Size = new System.Drawing.Size(15, 21);
+            this.lblCompetitionStatus.TabIndex = 10;
+            this.lblCompetitionStatus.Text = " ";
             // 
             // label28
             // 
@@ -580,6 +580,7 @@
             this.lstBoxCompetitions.Name = "lstBoxCompetitions";
             this.lstBoxCompetitions.Size = new System.Drawing.Size(201, 289);
             this.lstBoxCompetitions.TabIndex = 2;
+            this.lstBoxCompetitions.SelectedIndexChanged += new System.EventHandler(this.lstBoxCompetitions_SelectedIndexChanged);
             // 
             // tabFeedback
             // 
@@ -596,6 +597,36 @@
             this.tabFeedback.TabIndex = 5;
             this.tabFeedback.Text = "Feedback";
             this.tabFeedback.UseVisualStyleBackColor = true;
+            // 
+            // lblFeedbackSubject
+            // 
+            this.lblFeedbackSubject.AutoSize = true;
+            this.lblFeedbackSubject.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFeedbackSubject.Location = new System.Drawing.Point(346, 87);
+            this.lblFeedbackSubject.Name = "lblFeedbackSubject";
+            this.lblFeedbackSubject.Size = new System.Drawing.Size(15, 21);
+            this.lblFeedbackSubject.TabIndex = 15;
+            this.lblFeedbackSubject.Text = " ";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(259, 87);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(75, 19);
+            this.label33.TabIndex = 14;
+            this.label33.Text = "Subject:";
+            // 
+            // lblFeedbackFrom
+            // 
+            this.lblFeedbackFrom.AutoSize = true;
+            this.lblFeedbackFrom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblFeedbackFrom.Location = new System.Drawing.Point(346, 56);
+            this.lblFeedbackFrom.Name = "lblFeedbackFrom";
+            this.lblFeedbackFrom.Size = new System.Drawing.Size(15, 21);
+            this.lblFeedbackFrom.TabIndex = 13;
+            this.lblFeedbackFrom.Text = " ";
             // 
             // label31
             // 
@@ -800,36 +831,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // lblFeedbackFrom
-            // 
-            this.lblFeedbackFrom.AutoSize = true;
-            this.lblFeedbackFrom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFeedbackFrom.Location = new System.Drawing.Point(346, 56);
-            this.lblFeedbackFrom.Name = "lblFeedbackFrom";
-            this.lblFeedbackFrom.Size = new System.Drawing.Size(15, 21);
-            this.lblFeedbackFrom.TabIndex = 13;
-            this.lblFeedbackFrom.Text = " ";
-            // 
-            // lblFeedbackSubject
-            // 
-            this.lblFeedbackSubject.AutoSize = true;
-            this.lblFeedbackSubject.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblFeedbackSubject.Location = new System.Drawing.Point(346, 87);
-            this.lblFeedbackSubject.Name = "lblFeedbackSubject";
-            this.lblFeedbackSubject.Size = new System.Drawing.Size(15, 21);
-            this.lblFeedbackSubject.TabIndex = 15;
-            this.lblFeedbackSubject.Text = " ";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(259, 87);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(75, 19);
-            this.label33.TabIndex = 14;
-            this.label33.Text = "Subject:";
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -926,14 +927,14 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtBoxEditFullName;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblCompetitionStatus;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabFeedback;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.RichTextBox txtBoxFeedbackMessage;
         private System.Windows.Forms.ListBox lstBoxFeedback;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblCompetitionDate;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label lblFeedbackFrom;
