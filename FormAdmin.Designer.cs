@@ -66,7 +66,7 @@
             this.lblCompetitionDate = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.lblCompetitionStatus = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblCompetitionParticipants = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lstBoxParticipantRankings = new System.Windows.Forms.ListBox();
@@ -483,7 +483,7 @@
             this.groupBox3.Controls.Add(this.lblCompetitionDate);
             this.groupBox3.Controls.Add(this.label30);
             this.groupBox3.Controls.Add(this.lblCompetitionStatus);
-            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.lblCompetitionParticipants);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.lstBoxParticipantRankings);
@@ -524,15 +524,15 @@
             this.lblCompetitionStatus.TabIndex = 10;
             this.lblCompetitionStatus.Text = " ";
             // 
-            // label28
+            // lblCompetitionParticipants
             // 
-            this.label28.AutoSize = true;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label28.Location = new System.Drawing.Point(29, 78);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(20, 21);
-            this.label28.TabIndex = 9;
-            this.label28.Text = "0";
+            this.lblCompetitionParticipants.AutoSize = true;
+            this.lblCompetitionParticipants.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblCompetitionParticipants.Location = new System.Drawing.Point(29, 78);
+            this.lblCompetitionParticipants.Name = "lblCompetitionParticipants";
+            this.lblCompetitionParticipants.Size = new System.Drawing.Size(20, 21);
+            this.lblCompetitionParticipants.TabIndex = 9;
+            this.lblCompetitionParticipants.Text = "0";
             // 
             // label27
             // 
@@ -929,7 +929,7 @@
         private System.Windows.Forms.TextBox txtBoxEditFullName;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lblCompetitionStatus;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblCompetitionParticipants;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabFeedback;
         private System.Windows.Forms.Label label18;
