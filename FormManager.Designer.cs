@@ -32,7 +32,7 @@
             this.tabPgManageCompetition = new System.Windows.Forms.TabPage();
             this.btnViewStudent = new System.Windows.Forms.Button();
             this.btnRecordResult = new System.Windows.Forms.Button();
-            this.btnAssignMember = new System.Windows.Forms.Button();
+            this.btnAssignMemberForm = new System.Windows.Forms.Button();
             this.btnDeleteCompetition = new System.Windows.Forms.Button();
             this.btnEditCompetition = new System.Windows.Forms.Button();
             this.btnAddCompetition = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             // 
             this.tabPgManageCompetition.Controls.Add(this.btnViewStudent);
             this.tabPgManageCompetition.Controls.Add(this.btnRecordResult);
-            this.tabPgManageCompetition.Controls.Add(this.btnAssignMember);
+            this.tabPgManageCompetition.Controls.Add(this.btnAssignMemberForm);
             this.tabPgManageCompetition.Controls.Add(this.btnDeleteCompetition);
             this.tabPgManageCompetition.Controls.Add(this.btnEditCompetition);
             this.tabPgManageCompetition.Controls.Add(this.btnAddCompetition);
@@ -93,14 +93,15 @@
             this.btnRecordResult.Text = "Record Results";
             this.btnRecordResult.UseVisualStyleBackColor = true;
             // 
-            // btnAssignMember
+            // btnAssignMemberForm
             // 
-            this.btnAssignMember.Location = new System.Drawing.Point(47, 225);
-            this.btnAssignMember.Name = "btnAssignMember";
-            this.btnAssignMember.Size = new System.Drawing.Size(287, 35);
-            this.btnAssignMember.TabIndex = 3;
-            this.btnAssignMember.Text = "Assign Members";
-            this.btnAssignMember.UseVisualStyleBackColor = true;
+            this.btnAssignMemberForm.Location = new System.Drawing.Point(47, 225);
+            this.btnAssignMemberForm.Name = "btnAssignMemberForm";
+            this.btnAssignMemberForm.Size = new System.Drawing.Size(287, 35);
+            this.btnAssignMemberForm.TabIndex = 3;
+            this.btnAssignMemberForm.Text = "Assign Members";
+            this.btnAssignMemberForm.UseVisualStyleBackColor = true;
+            this.btnAssignMemberForm.Click += new System.EventHandler(this.btnAssignMemberForm_Click);
             // 
             // btnDeleteCompetition
             // 
@@ -110,6 +111,7 @@
             this.btnDeleteCompetition.TabIndex = 2;
             this.btnDeleteCompetition.Text = "Delete Competition";
             this.btnDeleteCompetition.UseVisualStyleBackColor = true;
+            this.btnDeleteCompetition.Click += new System.EventHandler(this.btnDeleteCompetition_Click);
             // 
             // btnEditCompetition
             // 
@@ -208,7 +210,7 @@
         private System.Windows.Forms.Button btnDeleteCompetition;
         private System.Windows.Forms.Button btnEditCompetition;
         private System.Windows.Forms.Button btnAddCompetition;
-        private System.Windows.Forms.Button btnAssignMember;
+        private System.Windows.Forms.Button btnAssignMemberForm;
         private System.Windows.Forms.TabPage tabPgUpdateProfile;
         private System.Windows.Forms.Button btnRecordResult;
         private System.Windows.Forms.Button btnChangePassword;

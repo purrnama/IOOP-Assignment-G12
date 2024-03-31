@@ -14,6 +14,8 @@ namespace IOOPAssignment_G12
     {
         FormAddCompetition frmAddComp = new FormAddCompetition();
         FormEditCompetition frmEditComp = new FormEditCompetition();
+        FormDeleteCompetition frmDeleteComp = new FormDeleteCompetition();
+        FormAssignMembers frmAssignMembers = new FormAssignMembers();
         
         public frmManager()
         {
@@ -38,6 +40,16 @@ namespace IOOPAssignment_G12
         private void btnEditCompetition_Click(object sender, EventArgs e)
         {
             frmEditComp.Show();
+        }
+
+        private void btnDeleteCompetition_Click(object sender, EventArgs e)
+        {
+            frmDeleteComp.Show();  
+        }
+
+        private void btnAssignMemberForm_Click(object sender, EventArgs e)
+        {
+            frmAssignMembers.Show();
         }
     }
 }

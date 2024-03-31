@@ -77,6 +77,18 @@
     <Compile Include="FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAssignMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssignMembers.Designer.cs">
+      <DependentUpon>FormAssignMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeleteCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeleteCompetition.Designer.cs">
+      <DependentUpon>FormDeleteCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditCompetition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAssignMembers.resx">
+      <DependentUpon>FormAssignMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeleteCompetition.resx">
+      <DependentUpon>FormDeleteCompetition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditCompetition.resx">
       <DependentUpon>FormEditCompetition.cs</DependentUpon>
