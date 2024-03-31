@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -40,6 +41,36 @@ namespace IOOPAssignment_G12
             if (i == 0)
             {
                 status = "Unable to add coach " + _username;
+            }
+            conn.Close();
+            return status;
+        }
+
+        public string GetCoachByName()
+        {
+            string status = null;
+            SqlCommand getCoach = new SqlCommand("SELECT salary FROM coaches WHERE username=@u", conn);
+            getCoach.Parameters.AddWithValue("@u", _username);
+
+            conn.Open();
+            SqlDataReader rd = getCoach.ExecuteReader();
+            if (rd.HasRows)
+            {
+                while (rd.Read())
+                {
+                    try
+                    {
+                        _salary = rd.GetDecimal(0);
+                    }
+                    catch
+                    {
+                        _salary = 0;
+                    }
+                }
+            }
+            else
+            {
+                status = "No coach data found with this username";
             }
             conn.Close();
             return status;
