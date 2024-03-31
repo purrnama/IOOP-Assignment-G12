@@ -246,42 +246,22 @@ namespace IOOPAssignment_G12
         }
         public void PopulateListbox(ListBox listBox)
         {
-            try
-            {
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT username FROM Members", conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
+            conn.Open();
+            SqlCommand getMembers = new SqlCommand("SELECT username FROM members", conn);
 
-                listBox.DataSource = dt;
-                listBox.DisplayMember = "username"; // Set the display member to the column name "username"
-            }
-            catch (Exception ex)
+            SqlDataReader rd = getMembers.ExecuteReader();
+            while(rd.Read())
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    listBox.Items.Add(rd.GetString(0));
+                }
+                catch
+                {
+                    continue;
+                }
             }
-            finally
-            {
-                conn.Close(); // Close the connection
-            }
-            /*try
-            {
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT username FROM Members", conn);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                listBox.DataSource = dt;
-                listBox.DisplayMember = "username"; // Set the display member to the column name "username"
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close(); // Close the connection in the finally block
-            }*/
+            conn.Close();
         }
         public void DisplayCompetitionsDataGridAssign(FormAssignMembers form)
         {
@@ -338,8 +318,7 @@ namespace IOOPAssignment_G12
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Participants(competitionId, participantUsername, results) VALUES(@c, @p, NULL)";
-                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Participants(competitionId, participantUsername) VALUES(@c, @p)", conn);
                     cmd.Parameters.AddWithValue("@c", competitionId);
                     cmd.Parameters.AddWithValue("@p", username);
                     int rowsAffected = cmd.ExecuteNonQuery();
