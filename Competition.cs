@@ -339,6 +339,106 @@ namespace IOOPAssignment_G12
                 }
                 conn.Close();
             }
+            
+        }
+        public void AddCompListBox(ListBox listBox)
+        {
+            conn.Open();
+            SqlCommand getCompName = new SqlCommand("SELECT competitionName FROM Competitions", conn);
+
+            SqlDataReader rd = getCompName.ExecuteReader();
+            while (rd.Read())
+            {
+                try
+                {
+                    listBox.Items.Add(rd.GetString(0));
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            conn.Close();
+        }
+        public void AddParticipantList(ListBox listBox)
+        {
+            conn.Open();
+            SqlCommand getParticipants = new SqlCommand("SELECT participantUsername FROM Participants", conn);
+
+            SqlDataReader rd = getParticipants.ExecuteReader();
+            while (rd.Read())
+            {
+                try
+                {
+                    listBox.Items.Add(rd.GetString(0));
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            conn.Close();
+        }
+        /*public void RecordResult(string result, string competitionName, string username)
+        {
+            try
+            {
+                //string resultText = txtBoxResult.Text;
+                conn.Open();
+
+                // Create SQL command to insert data into the table
+                string query = "UPDATE participants SET results=@r WHERE competitionId=@c AND participantUsername=@p";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                // Add parameter for the result value
+                cmd.Parameters.AddWithValue("@r", result);
+                cmd.Parameters.AddWithValue("@c", competitionName );
+                cmd.Parameters.AddWithValue("@p", username);
+
+
+                // Execute the command
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Result saved successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inserting result: " + ex.Message);
+            };
+        }*/
+        public void UpdateParticipantResult(string competitionName, string participantUsername, string result)
+        {
+            try
+            {
+                conn.Open();
+
+                // Create SQL command to update the results column in the participants table
+                string query = "UPDATE Participants SET Result = @Result WHERE CompetitionName = @competitionName AND participantUsername = @ParticipantUsername";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                // Add parameters for competition name, participant username, and result
+                cmd.Parameters.AddWithValue("@CompetitionName", competitionName);
+                cmd.Parameters.AddWithValue("@ParticipantUsername", participantUsername);
+                cmd.Parameters.AddWithValue("@Result", result);
+
+                // Execute the command
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                // Check if any rows were affected
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Result updated successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("No matching record found for update.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating result: " + ex.Message);
+            }
+            
         }
     }
 }

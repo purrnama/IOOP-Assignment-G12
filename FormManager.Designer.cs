@@ -92,6 +92,7 @@
             this.btnRecordResult.TabIndex = 4;
             this.btnRecordResult.Text = "Record Results";
             this.btnRecordResult.UseVisualStyleBackColor = true;
+            this.btnRecordResult.Click += new System.EventHandler(this.btnRecordResult_Click);
             // 
             // btnAssignMemberForm
             // 

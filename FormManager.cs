@@ -16,6 +16,7 @@ namespace IOOPAssignment_G12
         FormEditCompetition frmEditComp = new FormEditCompetition();
         FormDeleteCompetition frmDeleteComp = new FormDeleteCompetition();
         FormAssignMembers frmAssignMembers = new FormAssignMembers();
+        FormRecordResult frmRecordResult = new FormRecordResult();
         
         public frmManager()
         {
@@ -51,5 +52,11 @@ namespace IOOPAssignment_G12
         {
             frmAssignMembers.Show();
         }
+
+        private void btnRecordResult_Click(object sender, EventArgs e)
+        {
+            frmRecordResult.Show();
+        }
+
     }
 }

@@ -34,6 +34,7 @@ namespace IOOPAssignment_G12
         private void btnAssignMember_Click(object sender, EventArgs e)
         {
             competition.FillParticipantTable(dataGridViewParticipantTable, int.Parse(lblCompID.Text), listBoxAddMembers.SelectedItem.ToString());
+            competition.DisplayParticipantDataGridAssign(this);
         }
     }
 }
