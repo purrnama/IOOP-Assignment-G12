@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
@@ -54,6 +56,54 @@ namespace IOOPAssignment_G12
                     lstBoxUsers.Items.Add(user);
                 }
             }
+            if (tabControl1.SelectedIndex == 2)
+            {
+                lstBoxCoaches.Items.Clear();
+                ArrayList coaches = User.ViewAll("coach");
+                foreach (var coach in coaches)
+                {
+                    lstBoxCoaches.Items.Add(coach);
+                }
+            }
+            if (tabControl1.SelectedIndex == 3)
+            {
+                lstBoxCompetitions.Items.Clear();
+                ArrayList comps = new ArrayList();
+                //TODO: put this in Competition class
+                //BEGIN
+                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
+                SqlCommand listComp = new SqlCommand("SELECT competitionName FROM competitions", conn);
+                conn.Open();
+                SqlDataReader rd = listComp.ExecuteReader();
+                while (rd.Read())
+                {
+                    try
+                    {
+                        comps.Add(rd.GetString(0));
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+                conn.Close();
+                //END
+                foreach(var comp in comps)
+                {
+                    lstBoxCompetitions.Items.Add(comp);
+                }
+
+
+            }
+            if (tabControl1.SelectedIndex == 4)
+            {
+                lstBoxFeedback.Items.Clear();
+                ArrayList feedbacks = Suggestion.viewAll();
+                foreach(var feedback in feedbacks)
+                {
+                    lstBoxFeedback.Items.Add(feedback);
+                }
+            }
             if (tabControl1.SelectedIndex == 5)
             {
                 refreshProfile();
@@ -62,6 +112,10 @@ namespace IOOPAssignment_G12
 
         private void lstBoxUsers_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
             User selected = new User(lstBoxUsers.SelectedItem.ToString());
             User.ViewProfile(selected);
 
@@ -81,6 +135,21 @@ namespace IOOPAssignment_G12
                 btnDelete.Enabled = true;
             }
             */
+        }
+        private void lstBoxFeedback_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
+            Suggestion selected = new Suggestion(lstBoxFeedback.SelectedItem.ToString());
+            string status = selected.getSuggestionBySubject();
+            if(status == null)
+            {
+                lblFeedbackFrom.Text = selected.Username;
+                lblFeedbackSubject.Text = selected.Subject;
+                txtBoxFeedbackMessage.Text = selected.Message;
+            }
         }
 
         private void btnUpdateProfileCancel_Click(object sender, EventArgs e)
@@ -250,6 +319,47 @@ namespace IOOPAssignment_G12
             {
                 frmEditUser frmEditUser = new frmEditUser(txtBoxUsername.Text);
                 frmEditUser.ShowDialog();
+            }
+        }
+
+        private void lstBoxCompetitions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
+            Competition selected = new Competition(lstBoxCompetitions.SelectedItem.ToString());
+            string status = selected.getCompetitionByName();
+            if(status == null)
+            {
+                lblCompetitionDate.Text = selected.Date.ToShortDateString();
+                lblCompetitionStatus.Text = selected.getStatus();
+            }
+            ArrayList participants = selected.getParticipants();
+            lblCompetitionParticipants.Text = participants.Count.ToString();
+            lstBoxParticipantRankings.Items.Clear();
+            foreach (Participant p in participants)
+            {
+                User pUser = new User(p.Username);
+                User.ViewProfile(pUser);
+                string item = pUser.FullName + (p.Results == null ? "" : " - " + p.Results);
+                lstBoxParticipantRankings.Items.Add(item);
+            }
+        }
+
+        private void lstBoxCoaches_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstBoxUsers.SelectedItem == null)
+            {
+                return;
+            }
+            User selected = new User(lstBoxCoaches.SelectedItem.ToString());
+            User.ViewProfile(selected);
+            Coach selectedCoach = new Coach(selected.Username);
+            string status = selectedCoach.GetCoachByName();
+            if(status == null)
+            {
+                lblIncomeCoachSalary.Text = "RM" + selectedCoach.Salary.ToString("0.00");
             }
         }
     }
