@@ -47,72 +47,70 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(45, 287);
+            this.lblPhone.Location = new System.Drawing.Point(45, 301);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(60, 19);
+            this.lblPhone.Size = new System.Drawing.Size(56, 21);
             this.lblPhone.TabIndex = 38;
             this.lblPhone.Text = "Phone:";
             // 
             // txtBoxPhone
             // 
-            this.txtBoxPhone.Location = new System.Drawing.Point(146, 283);
+            this.txtBoxPhone.Location = new System.Drawing.Point(146, 297);
             this.txtBoxPhone.Name = "txtBoxPhone";
-            this.txtBoxPhone.Size = new System.Drawing.Size(144, 26);
+            this.txtBoxPhone.Size = new System.Drawing.Size(144, 28);
             this.txtBoxPhone.TabIndex = 37;
             this.txtBoxPhone.TextChanged += new System.EventHandler(this.txtBoxPhone_TextChanged);
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(44, 255);
+            this.lblEmail.Location = new System.Drawing.Point(44, 268);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(54, 19);
+            this.lblEmail.Size = new System.Drawing.Size(53, 21);
             this.lblEmail.TabIndex = 36;
             this.lblEmail.Text = "Email:";
             // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.Location = new System.Drawing.Point(145, 251);
+            this.txtBoxEmail.Location = new System.Drawing.Point(145, 264);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(144, 26);
+            this.txtBoxEmail.Size = new System.Drawing.Size(144, 28);
             this.txtBoxEmail.TabIndex = 35;
             this.txtBoxEmail.TextChanged += new System.EventHandler(this.txtBoxEmail_TextChanged);
             // 
             // lblFullName
             // 
             this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(45, 221);
+            this.lblFullName.Font = new System.Drawing.Font("Futura Std Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullName.Location = new System.Drawing.Point(45, 232);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(90, 19);
+            this.lblFullName.Size = new System.Drawing.Size(85, 20);
             this.lblFullName.TabIndex = 34;
             this.lblFullName.Text = "Full Name:";
             // 
             // txtBoxFullName
             // 
-            this.txtBoxFullName.Location = new System.Drawing.Point(146, 217);
+            this.txtBoxFullName.Location = new System.Drawing.Point(146, 228);
             this.txtBoxFullName.Name = "txtBoxFullName";
-            this.txtBoxFullName.Size = new System.Drawing.Size(144, 26);
+            this.txtBoxFullName.Size = new System.Drawing.Size(144, 28);
             this.txtBoxFullName.TabIndex = 33;
             this.txtBoxFullName.TextChanged += new System.EventHandler(this.txtBoxFullName_TextChanged);
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(45, 157);
+            this.lblUsername.Font = new System.Drawing.Font("Futura Std Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(45, 165);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(95, 19);
+            this.lblUsername.Size = new System.Drawing.Size(85, 20);
             this.lblUsername.TabIndex = 32;
             this.lblUsername.Text = "Username:";
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(48, 380);
+            this.btnEdit.Location = new System.Drawing.Point(48, 399);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(241, 31);
+            this.btnEdit.Size = new System.Drawing.Size(241, 33);
             this.btnEdit.TabIndex = 31;
             this.btnEdit.Text = "Save changes";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -121,10 +119,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(104, 85);
+            this.label4.Font = new System.Drawing.Font("Futura Std Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(121, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 20);
+            this.label4.Size = new System.Drawing.Size(93, 27);
             this.label4.TabIndex = 30;
             this.label4.Text = "Edit User";
             // 
@@ -136,55 +134,55 @@
             "Coach",
             "Manager",
             "Admin"});
-            this.cBoxRole.Location = new System.Drawing.Point(146, 315);
+            this.cBoxRole.Location = new System.Drawing.Point(146, 331);
             this.cBoxRole.Name = "cBoxRole";
-            this.cBoxRole.Size = new System.Drawing.Size(144, 28);
+            this.cBoxRole.Size = new System.Drawing.Size(144, 29);
             this.cBoxRole.TabIndex = 29;
             this.cBoxRole.SelectedIndexChanged += new System.EventHandler(this.cBoxRole_SelectedIndexChanged);
             // 
             // txtBoxPassword
             // 
-            this.txtBoxPassword.Location = new System.Drawing.Point(146, 185);
+            this.txtBoxPassword.Location = new System.Drawing.Point(146, 194);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.PasswordChar = '*';
-            this.txtBoxPassword.Size = new System.Drawing.Size(144, 26);
+            this.txtBoxPassword.Size = new System.Drawing.Size(144, 28);
             this.txtBoxPassword.TabIndex = 28;
             this.txtBoxPassword.TextChanged += new System.EventHandler(this.txtBoxPassword_TextChanged);
             // 
             // txtBoxUsername
             // 
-            this.txtBoxUsername.Location = new System.Drawing.Point(146, 153);
+            this.txtBoxUsername.Location = new System.Drawing.Point(146, 161);
             this.txtBoxUsername.Name = "txtBoxUsername";
-            this.txtBoxUsername.Size = new System.Drawing.Size(144, 26);
+            this.txtBoxUsername.Size = new System.Drawing.Size(144, 28);
             this.txtBoxUsername.TabIndex = 27;
             this.txtBoxUsername.TextChanged += new System.EventHandler(this.txtBoxUsername_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 319);
+            this.label3.Font = new System.Drawing.Font("Futura Std Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(45, 335);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 19);
+            this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 26;
             this.label3.Text = "Role:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Helvetica", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(45, 188);
+            this.label2.Font = new System.Drawing.Font("Futura Std Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(45, 197);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 19);
+            this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 25;
             this.label2.Text = "Password:";
             // 
             // frmEditUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(334, 497);
+            this.ClientSize = new System.Drawing.Size(334, 522);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.txtBoxPhone);
             this.Controls.Add(this.lblEmail);
@@ -199,7 +197,7 @@
             this.Controls.Add(this.txtBoxUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Futura Std Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmEditUser";
             this.Text = "FormEditUser";
