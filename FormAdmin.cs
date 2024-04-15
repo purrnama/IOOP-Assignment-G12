@@ -122,19 +122,6 @@ namespace IOOPAssignment_G12
             txtBoxUsername.Text = selected.Username;
             txtboxFullName.Text = selected.FullName;
             txtBoxRole.Text = selected.Role;
-
-            /* Prevent admin from manipulating other admins
-            if(txtBoxRole.Text == "admin")
-            {
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
-            }
-            else
-            {
-                btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
-            }
-            */
         }
         private void lstBoxFeedback_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -110,15 +110,16 @@ public class Member
         return competitions;
     }
 
-    public void SendSuggestion(string username, string message)
+    public void SendSuggestion(string username, string subject, string message)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "INSERT INTO Suggestions (username, message) VALUES (@username, @message)";
+            string query = "INSERT INTO Suggestions (username, subject, message) VALUES (@username, @subject @message)";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@subject", subject);
                 command.Parameters.AddWithValue("@message", message);
 
                 connection.Open();
