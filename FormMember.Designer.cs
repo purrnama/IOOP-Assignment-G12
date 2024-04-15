@@ -41,9 +41,10 @@
             // 
             // btnEnrollAndPay
             // 
-            this.btnEnrollAndPay.Location = new System.Drawing.Point(27, 32);
+            this.btnEnrollAndPay.Location = new System.Drawing.Point(20, 26);
+            this.btnEnrollAndPay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEnrollAndPay.Name = "btnEnrollAndPay";
-            this.btnEnrollAndPay.Size = new System.Drawing.Size(172, 40);
+            this.btnEnrollAndPay.Size = new System.Drawing.Size(129, 32);
             this.btnEnrollAndPay.TabIndex = 0;
             this.btnEnrollAndPay.Text = "Enroll and Pay";
             this.btnEnrollAndPay.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // 
             // btnUnenroll
             // 
-            this.btnUnenroll.Location = new System.Drawing.Point(27, 108);
+            this.btnUnenroll.Location = new System.Drawing.Point(20, 88);
+            this.btnUnenroll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUnenroll.Name = "btnUnenroll";
-            this.btnUnenroll.Size = new System.Drawing.Size(172, 40);
+            this.btnUnenroll.Size = new System.Drawing.Size(129, 32);
             this.btnUnenroll.TabIndex = 0;
             this.btnUnenroll.Text = "Unenroll";
             this.btnUnenroll.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@
             // 
             // btnTrainingSchedule
             // 
-            this.btnTrainingSchedule.Location = new System.Drawing.Point(27, 184);
+            this.btnTrainingSchedule.Location = new System.Drawing.Point(20, 150);
+            this.btnTrainingSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTrainingSchedule.Name = "btnTrainingSchedule";
-            this.btnTrainingSchedule.Size = new System.Drawing.Size(172, 40);
+            this.btnTrainingSchedule.Size = new System.Drawing.Size(129, 32);
             this.btnTrainingSchedule.TabIndex = 0;
             this.btnTrainingSchedule.Text = "Training Schedule";
             this.btnTrainingSchedule.UseVisualStyleBackColor = true;
@@ -71,9 +74,10 @@
             // 
             // btnPerformanceRecord
             // 
-            this.btnPerformanceRecord.Location = new System.Drawing.Point(304, 32);
+            this.btnPerformanceRecord.Location = new System.Drawing.Point(228, 26);
+            this.btnPerformanceRecord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPerformanceRecord.Name = "btnPerformanceRecord";
-            this.btnPerformanceRecord.Size = new System.Drawing.Size(172, 40);
+            this.btnPerformanceRecord.Size = new System.Drawing.Size(129, 32);
             this.btnPerformanceRecord.TabIndex = 0;
             this.btnPerformanceRecord.Text = "Performance Record";
             this.btnPerformanceRecord.UseVisualStyleBackColor = true;
@@ -81,9 +85,10 @@
             // 
             // btnAllCompetition
             // 
-            this.btnAllCompetition.Location = new System.Drawing.Point(304, 108);
+            this.btnAllCompetition.Location = new System.Drawing.Point(228, 88);
+            this.btnAllCompetition.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAllCompetition.Name = "btnAllCompetition";
-            this.btnAllCompetition.Size = new System.Drawing.Size(172, 40);
+            this.btnAllCompetition.Size = new System.Drawing.Size(129, 32);
             this.btnAllCompetition.TabIndex = 0;
             this.btnAllCompetition.Text = "All Competition";
             this.btnAllCompetition.UseVisualStyleBackColor = true;
@@ -91,9 +96,10 @@
             // 
             // btnSendSuggestion
             // 
-            this.btnSendSuggestion.Location = new System.Drawing.Point(304, 184);
+            this.btnSendSuggestion.Location = new System.Drawing.Point(228, 150);
+            this.btnSendSuggestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSendSuggestion.Name = "btnSendSuggestion";
-            this.btnSendSuggestion.Size = new System.Drawing.Size(172, 40);
+            this.btnSendSuggestion.Size = new System.Drawing.Size(129, 32);
             this.btnSendSuggestion.TabIndex = 0;
             this.btnSendSuggestion.Text = "Send Suggestion";
             this.btnSendSuggestion.UseVisualStyleBackColor = true;
@@ -101,9 +107,10 @@
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(169, 247);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(127, 201);
+            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(172, 40);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(129, 32);
             this.btnUpdateProfile.TabIndex = 0;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
@@ -118,22 +125,25 @@
             this.groupBox1.Controls.Add(this.btnAllCompetition);
             this.groupBox1.Controls.Add(this.btnTrainingSchedule);
             this.groupBox1.Controls.Add(this.btnPerformanceRecord);
-            this.groupBox1.Location = new System.Drawing.Point(78, 72);
+            this.groupBox1.Location = new System.Drawing.Point(58, 58);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(506, 299);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(380, 243);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Member dashboard";
             // 
             // FormMember
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(671, 450);
+            this.ClientSize = new System.Drawing.Size(503, 366);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormMember";
-            this.Text = "FormMember";
+            this.Text = "frmMember";
             this.Load += new System.EventHandler(this.FormMember_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

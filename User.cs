@@ -83,13 +83,14 @@ namespace IOOPAssignment_G12
                         frmAdmin a = new frmAdmin(displayName);
                         a.Show();
                     }
-                    if(role == "manager")
+                    if (role == "manager")
                     {
-
+                        frmManager frmManager = new frmManager(displayName);
+                        frmManager.Show();
                     }
                     if(role == "coach")
                     {
-                        frmCoach c = new frmCoach();
+                        frmCoach c = new frmCoach(displayName);
                         c.Show();
                     }
                     if(role == "member")

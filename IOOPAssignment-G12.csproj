@@ -12,7 +12,6 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,6 +24,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -49,9 +49,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -66,17 +69,47 @@
   <ItemGroup>
     <Compile Include="Coach.cs" />
     <Compile Include="Competition.cs" />
+    <Compile Include="EnrollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnrollForm.Designer.cs">
+      <DependentUpon>EnrollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCompetition.Designer.cs">
+      <DependentUpon>FormAddCompetition.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAssignMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAssignMembers.Designer.cs">
+      <DependentUpon>FormAssignMembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCoach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCoach.Designer.cs">
       <DependentUpon>FormCoach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeleteCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeleteCompetition.Designer.cs">
+      <DependentUpon>FormDeleteCompetition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditCompetition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditCompetition.Designer.cs">
+      <DependentUpon>FormEditCompetition.cs</DependentUpon>
     </Compile>
     <Compile Include="FormEditUser.cs">
       <SubType>Form</SubType>
@@ -96,10 +129,61 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager.Designer.cs">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMember.Designer.cs">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecommendation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordResult.Designer.cs">
+      <DependentUpon>FormRecordResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdate.Designer.cs">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs" />
     <Compile Include="Participant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recommendation.cs" />
+    <Compile Include="sendSuggestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sendSuggestionForm.Designer.cs">
+      <DependentUpon>sendSuggestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Suggestion.cs" />
+    <Compile Include="Training.cs" />
+    <Compile Include="UnenrollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnenrollForm.Designer.cs">
+      <DependentUpon>UnenrollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateProfileForm.Designer.cs">
+      <DependentUpon>updateProfileForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="viewCompetitionsForm.cs">
       <SubType>Form</SubType>
@@ -122,14 +206,26 @@
     <EmbeddedResource Include="EnrollForm.resx">
       <DependentUpon>EnrollForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddCompetition.resx">
+      <DependentUpon>FormAddCompetition.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddUser.resx">
       <DependentUpon>FormAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAssignMembers.resx">
+      <DependentUpon>FormAssignMembers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCoach.resx">
       <DependentUpon>FormCoach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeleteCompetition.resx">
+      <DependentUpon>FormDeleteCompetition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditCompetition.resx">
+      <DependentUpon>FormEditCompetition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditUser.resx">
       <DependentUpon>FormEditUser.cs</DependentUpon>
@@ -137,18 +233,24 @@
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManager.resx">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMember.resx">
       <DependentUpon>FormMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.EnrollForm.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.FormMember.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.frmAddUser.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.frmAdmin.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.frmLogin.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.sendSuggestionForm.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.UnenrollForm.resources" />
-    <EmbeddedResource Include="obj\Debug\IOOPAssignment_G12.ViewScheduleForm.resources" />
+    <EmbeddedResource Include="FormPaymentView.resx">
+      <DependentUpon>FormPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecommendation.resx">
+      <DependentUpon>FormRecommendation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordResult.resx">
+      <DependentUpon>FormRecordResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdate.resx">
+      <DependentUpon>FormUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -178,12 +280,7 @@
       <DependentUpon>ViewScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="bin\Debug\IOOPAssignment-G12.exe.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\IOOPAssignment-G12.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\IOOPAssignment-G12.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\IOOPAssignment-G12.csproj.GenerateResource.cache" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -195,17 +292,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".gitattributes" />
-    <Content Include=".gitignore" />
-    <Content Include="bin\Debug\DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Debug\DB_log.ldf">
-      <DependentUpon>DB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Debug\IOOPAssignment-G12.exe" />
-    <Content Include="bin\Debug\IOOPAssignment-G12.pdb" />
     <Content Include="DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -227,9 +313,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
