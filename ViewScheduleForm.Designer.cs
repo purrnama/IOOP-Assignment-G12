@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.listBoxSchedule = new System.Windows.Forms.ListBox();
-            this.btnBacktoDashboard = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -41,15 +40,6 @@
             this.listBoxSchedule.Name = "listBoxSchedule";
             this.listBoxSchedule.Size = new System.Drawing.Size(335, 164);
             this.listBoxSchedule.TabIndex = 2;
-            // 
-            // btnBacktoDashboard
-            // 
-            this.btnBacktoDashboard.Location = new System.Drawing.Point(193, 316);
-            this.btnBacktoDashboard.Name = "btnBacktoDashboard";
-            this.btnBacktoDashboard.Size = new System.Drawing.Size(135, 27);
-            this.btnBacktoDashboard.TabIndex = 0;
-            this.btnBacktoDashboard.Text = "Back to Dashboard";
-            this.btnBacktoDashboard.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -69,7 +59,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxSchedule);
-            this.Controls.Add(this.btnBacktoDashboard);
             this.Name = "ViewScheduleForm";
             this.Text = "ViewScheduleForm";
             this.Load += new System.EventHandler(this.ViewScheduleForm_Load);
@@ -80,7 +69,6 @@
 
         #endregion
         private System.Windows.Forms.ListBox listBoxSchedule;
-        private System.Windows.Forms.Button btnBacktoDashboard;
         private System.Windows.Forms.Label label1;
     }
 }
