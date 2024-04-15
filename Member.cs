@@ -58,35 +58,6 @@ public class Member
             }
         }
     }
-
-    public List<string> ViewTrainingSchedule()
-    {
-        List<string> schedule = new List<string>();
-
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        {
-            string query = "SELECT Training.trainingLevel, Training.date FROM Trainings JOIN Members on Training.trainingLevel = Members.trainingLevel where Members.username = @username ";
-
-            using (SqlCommand command = new SqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@username", _username);
-
-                connection.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        string trainingLevel = reader.GetString(0);
-                        DateTime date = reader.GetDateTime(1);
-                        schedule.Add(trainingLevel + " - " + date.ToShortDateString());
-                    }
-                }
-            }
-        }
-
-        return schedule;
-    }
-
     public int ViewPerformanceRecord(string username)
     {
         int performance = 0;
@@ -173,4 +144,32 @@ public class Member
             }
         }
     }
+    public List<string> ViewTrainingSchedule()
+    {
+        List<string> schedule = new List<string>();
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            string query = "SELECT trainings.trainingLevel, trainings.date FROM Trainings JOIN Members on Trainings.trainingLevel = Members.trainingLevel where Members.username = @username";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@username", _username);
+
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string trainingLevel = reader.GetString(0);
+                        DateTime date = reader.GetDateTime(1);
+                        schedule.Add(trainingLevel + " - " + date.ToShortDateString());
+                    }
+                }
+            }
+        }
+
+        return schedule;
+    }
+
 }

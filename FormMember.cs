@@ -55,8 +55,15 @@ namespace IOOPAssignment_G12
 
         private void btnTrainingSchedule_Click(object sender, EventArgs e)
         {
-            ViewScheduleForm viewScheduleForm = new ViewScheduleForm();
-            viewScheduleForm.Show();
+            if (currentMember != null)
+            {
+                ViewScheduleForm viewScheduleForm = new ViewScheduleForm(currentMember);
+                viewScheduleForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("No member information available.");
+            }
         }
 
         private void btnPerformanceRecord_Click(object sender, EventArgs e)
