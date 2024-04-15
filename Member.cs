@@ -114,7 +114,7 @@ public class Member
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "INSERT INTO Suggestions (username, subject, message) VALUES (@username, @subject @message)";
+            string query = "INSERT INTO Suggestions (username, subject, message) VALUES (@username, @subject, @message)";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {

@@ -31,6 +31,7 @@ namespace IOOPAssignment_G12
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            member = new Member(username);
             // Call the SendSuggestion method from the MemberService
             member.SendSuggestion(username, txtBoxSubject.Text, txtSuggestion.Text);
             MessageBox.Show("Suggestion sent successfully.");
