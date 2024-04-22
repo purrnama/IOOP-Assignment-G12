@@ -10,7 +10,7 @@ namespace IOOPAssignment_G12
 {
     public partial class frmCoach : Form
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Source\\Repos\\IOOP-Assignment-G12\\DB.mdf;Integrated Security=True";
+        private string connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
         private DataTable dataTable = new DataTable();
         private string loggedInUser;
 
@@ -21,7 +21,7 @@ namespace IOOPAssignment_G12
             loggedInUser = displayname;
             coachUsernameTextBox.Text = loggedInUser; // Set the coachUsernameTextBox text to the logged-in user
             coachUsernameTextBox.Enabled = false;
-            CheckUserRole();
+            //CheckUserRole();
             Display();
             dataGridView1.SelectionChanged += dataGridView1_SelectionChanged; // Subscribe to the SelectionChanged event
 
@@ -37,9 +37,9 @@ namespace IOOPAssignment_G12
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT Role FROM Users WHERE username = @username", con);
-                    cmd.Parameters.AddWithValue("@Username", loggedInUser);
+                    cmd.Parameters.AddWithValue("@username", loggedInUser);
                     var role = cmd.ExecuteScalar();
-                    if (role != null && role.ToString().Equals("Coach", StringComparison.OrdinalIgnoreCase))
+                    if (role != null && role.ToString().Equals("coach", StringComparison.OrdinalIgnoreCase))
                     {
                         // User is a coach, allow access to coach forms
                         tabPage2.Enabled = true; 
@@ -241,8 +241,7 @@ namespace IOOPAssignment_G12
 
         private void buttonRecommendation_Click(object sender, EventArgs e)
         {
-            string coachUsername = "coachUsername"; 
-            RecommendationsForm recommendationsForm = new RecommendationsForm(coachUsername);
+            RecommendationsForm recommendationsForm = new RecommendationsForm(loggedInUser);
             recommendationsForm.Show();
         }
 

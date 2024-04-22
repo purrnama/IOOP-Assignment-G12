@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,6 @@ namespace IOOPAssignment_G12
 {
     public partial class frmManager : Form
     {
-        FormAddCompetition frmAddComp = new FormAddCompetition();
-        FormEditCompetition frmEditComp = new FormEditCompetition();
-        FormDeleteCompetition frmDeleteComp = new FormDeleteCompetition();
-        FormAssignMembers frmAssignMembers = new FormAssignMembers();
-        FormRecordResult frmRecordResult = new FormRecordResult();
         
         public frmManager()
         {
@@ -35,28 +31,45 @@ namespace IOOPAssignment_G12
 
         private void btnAddCompetition_Click(object sender, EventArgs e)
         {
+            FormAddCompetition frmAddComp = new FormAddCompetition();
             frmAddComp.Show();
         }
 
         private void btnEditCompetition_Click(object sender, EventArgs e)
         {
+            FormEditCompetition frmEditComp = new FormEditCompetition();
             frmEditComp.Show();
         }
 
         private void btnDeleteCompetition_Click(object sender, EventArgs e)
         {
+            FormDeleteCompetition frmDeleteComp = new FormDeleteCompetition();
             frmDeleteComp.Show();  
         }
 
         private void btnAssignMemberForm_Click(object sender, EventArgs e)
         {
+
+            FormAssignMembers frmAssignMembers = new FormAssignMembers();
             frmAssignMembers.Show();
         }
 
         private void btnRecordResult_Click(object sender, EventArgs e)
         {
+            FormRecordResult frmRecordResult = new FormRecordResult();
             frmRecordResult.Show();
         }
-
+        private void tabCtrlManager_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabCtrlManager.SelectedIndex == 1)
+            {
+                lstBoxRecommendedStudent.Items.Clear();
+                ArrayList recs = Recommendation.ViewAll();
+                foreach (var rec in recs)
+                {
+                    lstBoxRecommendedStudent.Items.Add(rec);
+                }
+            }
+        }
     }
 }

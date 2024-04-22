@@ -58,6 +58,7 @@
             this.tabCtrlManager.SelectedIndex = 0;
             this.tabCtrlManager.Size = new System.Drawing.Size(386, 453);
             this.tabCtrlManager.TabIndex = 0;
+            this.tabCtrlManager.SelectedIndexChanged += new System.EventHandler(this.tabCtrlManager_SelectedIndexChanged);
             // 
             // tabPgManageCompetition
             // 

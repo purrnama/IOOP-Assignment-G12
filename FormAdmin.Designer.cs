@@ -32,6 +32,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabWelcome = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabUsers = new System.Windows.Forms.TabPage();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -45,18 +48,16 @@
             this.lstBoxUsers = new System.Windows.Forms.ListBox();
             this.tabIncome = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblIncomeCoachFees = new System.Windows.Forms.Label();
             this.lblIncomeCoachSalary = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblIncomeSessions = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lstBoxCoaches = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblIncomeTotal = new System.Windows.Forms.Label();
+            this.lblIncomeAdvanced = new System.Windows.Forms.Label();
+            this.lblIncomeIntermediate = new System.Windows.Forms.Label();
+            this.lblIncomeBeginner = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -96,11 +97,9 @@
             this.txtBoxEditFullName = new System.Windows.Forms.TextBox();
             this.txtBoxEditEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabWelcome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabUsers.SuspendLayout();
             this.tabIncome.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,7 +111,6 @@
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUser
@@ -165,6 +163,38 @@
             this.tabWelcome.TabIndex = 0;
             this.tabWelcome.Text = "Welcome";
             this.tabWelcome.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(312, 208);
+            this.label17.MaximumSize = new System.Drawing.Size(320, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(301, 63);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "As admin, manage users, review statistics, listen to feedback and oversee the man" +
+    "agement of the club";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Futura Std Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(311, 164);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(234, 30);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Admininstrator Panel";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::IOOPAssignment_G12.Properties.Resources.Tennis_Logo_gray_transparent;
+            this.pictureBox2.Location = new System.Drawing.Point(108, 121);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // tabUsers
             // 
@@ -293,10 +323,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblIncomeCoachFees);
             this.groupBox2.Controls.Add(this.lblIncomeCoachSalary);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.lblIncomeSessions);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.lstBoxCoaches);
@@ -306,16 +334,6 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Review Coach Income";
-            // 
-            // lblIncomeCoachFees
-            // 
-            this.lblIncomeCoachFees.AutoSize = true;
-            this.lblIncomeCoachFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblIncomeCoachFees.Location = new System.Drawing.Point(217, 252);
-            this.lblIncomeCoachFees.Name = "lblIncomeCoachFees";
-            this.lblIncomeCoachFees.Size = new System.Drawing.Size(75, 23);
-            this.lblIncomeCoachFees.TabIndex = 12;
-            this.lblIncomeCoachFees.Text = "RM 0.00";
             // 
             // lblIncomeCoachSalary
             // 
@@ -327,25 +345,15 @@
             this.lblIncomeCoachSalary.TabIndex = 11;
             this.lblIncomeCoachSalary.Text = "RM 0.00";
             // 
-            // label15
+            // lblIncomeSessions
             // 
-            this.label15.AutoSize = true;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Location = new System.Drawing.Point(217, 73);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(22, 23);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "0";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Futura Std Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(213, 216);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(107, 20);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "Collected Fees";
+            this.lblIncomeSessions.AutoSize = true;
+            this.lblIncomeSessions.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIncomeSessions.Location = new System.Drawing.Point(217, 73);
+            this.lblIncomeSessions.Name = "lblIncomeSessions";
+            this.lblIncomeSessions.Size = new System.Drawing.Size(22, 23);
+            this.lblIncomeSessions.TabIndex = 8;
+            this.lblIncomeSessions.Text = "0";
             // 
             // label13
             // 
@@ -379,10 +387,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.lblIncomeTotal);
+            this.groupBox1.Controls.Add(this.lblIncomeAdvanced);
+            this.groupBox1.Controls.Add(this.lblIncomeIntermediate);
+            this.groupBox1.Controls.Add(this.lblIncomeBeginner);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -394,45 +402,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Monthly Overview";
             // 
-            // label11
+            // lblIncomeTotal
             // 
-            this.label11.AutoSize = true;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Location = new System.Drawing.Point(140, 342);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 23);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "RM 0.00";
+            this.lblIncomeTotal.AutoSize = true;
+            this.lblIncomeTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIncomeTotal.Location = new System.Drawing.Point(140, 342);
+            this.lblIncomeTotal.Name = "lblIncomeTotal";
+            this.lblIncomeTotal.Size = new System.Drawing.Size(75, 23);
+            this.lblIncomeTotal.TabIndex = 7;
+            this.lblIncomeTotal.Text = "RM 0.00";
             // 
-            // label10
+            // lblIncomeAdvanced
             // 
-            this.label10.AutoSize = true;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Location = new System.Drawing.Point(24, 246);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 23);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "RM 0.00";
+            this.lblIncomeAdvanced.AutoSize = true;
+            this.lblIncomeAdvanced.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIncomeAdvanced.Location = new System.Drawing.Point(24, 246);
+            this.lblIncomeAdvanced.Name = "lblIncomeAdvanced";
+            this.lblIncomeAdvanced.Size = new System.Drawing.Size(75, 23);
+            this.lblIncomeAdvanced.TabIndex = 6;
+            this.lblIncomeAdvanced.Text = "RM 0.00";
             // 
-            // label9
+            // lblIncomeIntermediate
             // 
-            this.label9.AutoSize = true;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Location = new System.Drawing.Point(24, 156);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 23);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "RM 0.00";
+            this.lblIncomeIntermediate.AutoSize = true;
+            this.lblIncomeIntermediate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIncomeIntermediate.Location = new System.Drawing.Point(24, 156);
+            this.lblIncomeIntermediate.Name = "lblIncomeIntermediate";
+            this.lblIncomeIntermediate.Size = new System.Drawing.Size(75, 23);
+            this.lblIncomeIntermediate.TabIndex = 5;
+            this.lblIncomeIntermediate.Text = "RM 0.00";
             // 
-            // label8
+            // lblIncomeBeginner
             // 
-            this.label8.AutoSize = true;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label8.Location = new System.Drawing.Point(24, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 23);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "RM 0.00";
+            this.lblIncomeBeginner.AutoSize = true;
+            this.lblIncomeBeginner.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblIncomeBeginner.Location = new System.Drawing.Point(24, 71);
+            this.lblIncomeBeginner.Name = "lblIncomeBeginner";
+            this.lblIncomeBeginner.Size = new System.Drawing.Size(75, 23);
+            this.lblIncomeBeginner.TabIndex = 4;
+            this.lblIncomeBeginner.Text = "RM 0.00";
             // 
             // label7
             // 
@@ -840,38 +848,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::IOOPAssignment_G12.Properties.Resources.Tennis_Logo_gray_transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(108, 121);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(180, 180);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Futura Std Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(311, 164);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(234, 30);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Admininstrator Panel";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(312, 208);
-            this.label17.MaximumSize = new System.Drawing.Size(320, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(301, 63);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "As admin, manage users, review statistics, listen to feedback and oversee the man" +
-    "agement of the club";
-            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -889,6 +865,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabWelcome.ResumeLayout(false);
             this.tabWelcome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabUsers.ResumeLayout(false);
             this.tabUsers.PerformLayout();
             this.tabIncome.ResumeLayout(false);
@@ -908,7 +885,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -940,15 +916,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblIncomeBeginner;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblIncomeCoachFees;
+        private System.Windows.Forms.Label lblIncomeTotal;
+        private System.Windows.Forms.Label lblIncomeAdvanced;
+        private System.Windows.Forms.Label lblIncomeIntermediate;
         private System.Windows.Forms.Label lblIncomeCoachSalary;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblIncomeSessions;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox3;

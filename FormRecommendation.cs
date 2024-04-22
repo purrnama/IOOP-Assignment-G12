@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,7 +10,7 @@ namespace IOOPAssignment_G12
     {
         private DataGridView dataGridViewRecommendations;
         private Button buttonRecommend;
-        private readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\IOOP-Assignment-G12\DB.mdf;Integrated Security=True";
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
         private readonly string coachUsername;
 
         public RecommendationsForm(string coachUsername)

@@ -47,6 +47,7 @@ namespace IOOPAssignment_G12
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            //users
             if (tabControl1.SelectedIndex == 1)
             {
                 lstBoxUsers.Items.Clear();
@@ -56,45 +57,56 @@ namespace IOOPAssignment_G12
                     lstBoxUsers.Items.Add(user);
                 }
             }
+            //income
             if (tabControl1.SelectedIndex == 2)
             {
+                decimal beginnerIncome = 0;
+                decimal intermediateIncome = 0;
+                decimal advancedIncome = 0;
                 lstBoxCoaches.Items.Clear();
                 ArrayList coaches = User.ViewAll("coach");
                 foreach (var coach in coaches)
                 {
                     lstBoxCoaches.Items.Add(coach);
                 }
+                ArrayList members = Member.ViewAll();
+                foreach (Member member in members)
+                {
+                    if (member.Paid)
+                    {
+                        if(member.TrainingLevel == "beginner")
+                        {
+                            beginnerIncome += 20;
+                        }
+                        if (member.TrainingLevel == "intermediate")
+                        {
+                            intermediateIncome += 30;
+                        }
+                        if (member.TrainingLevel == "advanced")
+                        {
+                            advancedIncome += 50;
+                        }
+                    }
+                }
+                decimal totalIncome = beginnerIncome + intermediateIncome + advancedIncome;
+                lblIncomeBeginner.Text = "RM" + beginnerIncome.ToString("0.00");
+                lblIncomeIntermediate.Text = "RM" + intermediateIncome.ToString("0.00");
+                lblIncomeAdvanced.Text = "RM" + advancedIncome.ToString("0.00");
+                lblIncomeTotal.Text = "RM" + totalIncome.ToString("0.00");
             }
+            //competition
             if (tabControl1.SelectedIndex == 3)
             {
                 lstBoxCompetitions.Items.Clear();
-                ArrayList comps = new ArrayList();
-                //TODO: put this in Competition class
-                //BEGIN
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
-                SqlCommand listComp = new SqlCommand("SELECT competitionName FROM competitions", conn);
-                conn.Open();
-                SqlDataReader rd = listComp.ExecuteReader();
-                while (rd.Read())
-                {
-                    try
-                    {
-                        comps.Add(rd.GetString(0));
-                    }
-                    catch
-                    {
-                        continue;
-                    }
-                }
-                conn.Close();
-                //END
+                ArrayList comps = Competition.ViewAll();
                 foreach(var comp in comps)
                 {
                     lstBoxCompetitions.Items.Add(comp);
                 }
-
+                
 
             }
+            //feedback
             if (tabControl1.SelectedIndex == 4)
             {
                 lstBoxFeedback.Items.Clear();
@@ -104,6 +116,7 @@ namespace IOOPAssignment_G12
                     lstBoxFeedback.Items.Add(feedback);
                 }
             }
+            //update profile
             if (tabControl1.SelectedIndex == 5)
             {
                 refreshProfile();
@@ -348,6 +361,8 @@ namespace IOOPAssignment_G12
             {
                 lblIncomeCoachSalary.Text = "RM" + selectedCoach.Salary.ToString("0.00");
             }
+            ArrayList trainings = Training.ViewAllByCoach(selectedCoach.Username);
+            lblIncomeSessions.Text = trainings.Count.ToString();
         }
     }
 }

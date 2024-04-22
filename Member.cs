@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -9,11 +10,14 @@ public class Member
     private string connectionString;
     private string _username;
     private string _trainingLevel;
+    private int _performance;
     private bool _paid;
+    static SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ToString());
 
     public string Username { get => _username; set => _username = value; }
     public string TrainingLevel { get => _trainingLevel; set => _trainingLevel = value; }
     public bool Paid { get => _paid; set => _paid = value; }
+    public int Performance { get => _performance; set => _performance = value; }
 
     public Member()
     {
@@ -23,6 +27,29 @@ public class Member
     {
         connectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
         _username = username;
+    }
+    public Member(string username, string trainingLevel, int performance, bool payment)
+    {
+        _username = username;
+        _trainingLevel = trainingLevel;
+        _performance = performance;
+        _paid = payment;
+    }
+    public string AddMember()
+    {
+        string status = null;
+
+        SqlCommand addCoach = new SqlCommand("INSERT INTO Members(username, trainingLevel, performance, payment) VALUES(@u, NULL, 0, 0)", conn);
+        addCoach.Parameters.AddWithValue("@u", _username);
+
+        conn.Open();
+        int i = addCoach.ExecuteNonQuery();
+        if (i == 0)
+        {
+            status = "Unable to add member " + _username;
+        }
+        conn.Close();
+        return status;
     }
 
     public void EnrollInTraining(string trainingLevel)
@@ -172,5 +199,28 @@ public class Member
 
         return schedule;
     }
-
+    public static ArrayList ViewAll()
+    {
+        ArrayList members = new ArrayList();
+        SqlCommand listComp = new SqlCommand("SELECT username, trainingLevel, performance, payment FROM members", conn);
+        conn.Open();
+        SqlDataReader rd = listComp.ExecuteReader();
+        if (rd.HasRows)
+        {
+            while (rd.Read())
+            {
+                try
+                {
+                    Member m = new Member(rd.GetString(0), rd.GetString(1), rd.GetInt32(2), rd.GetBoolean(3));
+                    members.Add(m);
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+        }
+        conn.Close();
+        return members;
+    }
 }

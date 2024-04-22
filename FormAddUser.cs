@@ -109,7 +109,17 @@ namespace IOOPAssignment_G12
                 {
                     MessageBox.Show(status, "Add User Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                //TODO: Insert row to member-specific table
+                Member newMember = new Member(txtBoxUsername.Text);
+                string memberStatus = newMember.AddMember();
+                if (status == null)
+                {
+
+                    MessageBox.Show("Successfully added member " + txtBoxUsername.Text, "Add Member Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(status, "Add Member Status", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
