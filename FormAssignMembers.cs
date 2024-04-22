@@ -13,6 +13,7 @@ namespace IOOPAssignment_G12
     public partial class FormAssignMembers : Form
     {
         private Competition competition;
+
         public FormAssignMembers()
         {
             InitializeComponent();

@@ -68,14 +68,12 @@ namespace IOOPAssignment_G12
 
         private void btnPerformanceRecord_Click(object sender, EventArgs e)
         {
-            // Assuming 'currentMember' is an object of the 'Member' class representing the logged-in user.
             ViewPerformanceForm performanceForm = new ViewPerformanceForm(currentMember);
             performanceForm.ShowDialog();
         }
 
         private void btnAllCompetition_Click(object sender, EventArgs e)
         {
-            // Assuming you have a 'member' object for the logged-in member
             ViewCompetitionsForm competitionsForm = new ViewCompetitionsForm(currentMember);
             competitionsForm.ShowDialog();
         }

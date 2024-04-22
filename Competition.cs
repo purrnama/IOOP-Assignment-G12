@@ -533,6 +533,30 @@ namespace IOOPAssignment_G12
             }
 
         }
+
+        public static ArrayList ViewAll()
+        {
+            ArrayList comps = new ArrayList();
+            SqlCommand listComp = new SqlCommand("SELECT competitionName FROM competitions", conn);
+            conn.Open();
+            SqlDataReader rd = listComp.ExecuteReader();
+            if (rd.HasRows)
+            {
+                while (rd.Read())
+                {
+                    try
+                    {
+                        comps.Add(rd.GetString(0));
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+            }
+            conn.Close();
+            return comps;
+        }
     }
 }
 
