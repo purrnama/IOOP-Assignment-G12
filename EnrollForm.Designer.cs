@@ -41,25 +41,25 @@
             "Beginner",
             "Intermediate",
             "Advanced"});
-            this.comLevel.Location = new System.Drawing.Point(178, 166);
+            this.comLevel.Location = new System.Drawing.Point(85, 133);
             this.comLevel.Name = "comLevel";
-            this.comLevel.Size = new System.Drawing.Size(181, 24);
+            this.comLevel.Size = new System.Drawing.Size(204, 29);
             this.comLevel.TabIndex = 1;
             // 
             // lblLevel
             // 
             this.lblLevel.AutoSize = true;
-            this.lblLevel.Location = new System.Drawing.Point(175, 147);
+            this.lblLevel.Location = new System.Drawing.Point(36, 133);
             this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(40, 16);
+            this.lblLevel.Size = new System.Drawing.Size(43, 21);
             this.lblLevel.TabIndex = 0;
             this.lblLevel.Text = "Level";
             // 
             // btnEnroll
             // 
-            this.btnEnroll.Location = new System.Drawing.Point(218, 209);
+            this.btnEnroll.Location = new System.Drawing.Point(130, 190);
             this.btnEnroll.Name = "btnEnroll";
-            this.btnEnroll.Size = new System.Drawing.Size(92, 23);
+            this.btnEnroll.Size = new System.Drawing.Size(104, 31);
             this.btnEnroll.TabIndex = 3;
             this.btnEnroll.Text = "Enroll";
             this.btnEnroll.UseVisualStyleBackColor = true;
@@ -68,23 +68,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 16.2F);
-            this.label1.Location = new System.Drawing.Point(170, 98);
+            this.label1.Font = new System.Drawing.Font("Futura Bk", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(113, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 37);
+            this.label1.Size = new System.Drawing.Size(126, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Enroll Page";
             // 
             // EnrollForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(644, 450);
+            this.ClientSize = new System.Drawing.Size(378, 294);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEnroll);
             this.Controls.Add(this.lblLevel);
             this.Controls.Add(this.comLevel);
+            this.Font = new System.Drawing.Font("Futura Std Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "EnrollForm";
             this.Text = "EnrollForm";
             this.ResumeLayout(false);
