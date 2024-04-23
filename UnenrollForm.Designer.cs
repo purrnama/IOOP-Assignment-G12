@@ -35,9 +35,9 @@
             // 
             // btnUnenroll
             // 
-            this.btnUnenroll.Location = new System.Drawing.Point(328, 216);
+            this.btnUnenroll.Location = new System.Drawing.Point(149, 182);
             this.btnUnenroll.Name = "btnUnenroll";
-            this.btnUnenroll.Size = new System.Drawing.Size(140, 31);
+            this.btnUnenroll.Size = new System.Drawing.Size(158, 40);
             this.btnUnenroll.TabIndex = 3;
             this.btnUnenroll.Text = "Unenroll";
             this.btnUnenroll.UseVisualStyleBackColor = true;
@@ -46,10 +46,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 16.2F);
-            this.label1.Location = new System.Drawing.Point(296, 108);
+            this.label1.Font = new System.Drawing.Font("Futura Std Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(147, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 37);
+            this.label1.Size = new System.Drawing.Size(160, 30);
             this.label1.TabIndex = 5;
             this.label1.Text = "Unenroll Page";
             // 
@@ -60,20 +60,21 @@
             "Beginner ",
             "intermediate",
             "Advanced"});
-            this.comLevelSelection.Location = new System.Drawing.Point(272, 177);
+            this.comLevelSelection.Location = new System.Drawing.Point(83, 129);
             this.comLevelSelection.Name = "comLevelSelection";
-            this.comLevelSelection.Size = new System.Drawing.Size(257, 24);
+            this.comLevelSelection.Size = new System.Drawing.Size(289, 29);
             this.comLevelSelection.TabIndex = 4;
             // 
             // UnenrollForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(451, 302);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comLevelSelection);
             this.Controls.Add(this.btnUnenroll);
+            this.Font = new System.Drawing.Font("Futura Std Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UnenrollForm";
             this.Text = "Unenroll";
             this.Load += new System.EventHandler(this.Unenroll_Load);

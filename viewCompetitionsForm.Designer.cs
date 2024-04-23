@@ -35,30 +35,31 @@
             // listBoxCompetitions
             // 
             this.listBoxCompetitions.FormattingEnabled = true;
-            this.listBoxCompetitions.ItemHeight = 16;
-            this.listBoxCompetitions.Location = new System.Drawing.Point(168, 146);
+            this.listBoxCompetitions.ItemHeight = 21;
+            this.listBoxCompetitions.Location = new System.Drawing.Point(54, 119);
             this.listBoxCompetitions.Name = "listBoxCompetitions";
-            this.listBoxCompetitions.Size = new System.Drawing.Size(334, 180);
+            this.listBoxCompetitions.Size = new System.Drawing.Size(376, 235);
             this.listBoxCompetitions.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(202, 97);
+            this.label1.Font = new System.Drawing.Font("Futura Std Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(144, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 35);
+            this.label1.Size = new System.Drawing.Size(196, 30);
             this.label1.TabIndex = 1;
             this.label1.Text = "View Competition";
             // 
             // ViewCompetitionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(492, 398);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxCompetitions);
+            this.Font = new System.Drawing.Font("Futura Std Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ViewCompetitionsForm";
             this.Text = "viewCompetitionsForm";
             this.Load += new System.EventHandler(this.ViewCompetitionsForm_Load_1);

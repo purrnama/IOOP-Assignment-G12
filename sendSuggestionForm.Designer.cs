@@ -39,19 +39,17 @@
             // 
             // txtSuggestion
             // 
-            this.txtSuggestion.Location = new System.Drawing.Point(175, 120);
-            this.txtSuggestion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSuggestion.Location = new System.Drawing.Point(145, 177);
             this.txtSuggestion.Name = "txtSuggestion";
-            this.txtSuggestion.Size = new System.Drawing.Size(258, 118);
+            this.txtSuggestion.Size = new System.Drawing.Size(385, 188);
             this.txtSuggestion.TabIndex = 3;
             this.txtSuggestion.Text = "";
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(376, 262);
-            this.btnSend.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSend.Location = new System.Drawing.Point(145, 387);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(56, 19);
+            this.btnSend.Size = new System.Drawing.Size(84, 31);
             this.btnSend.TabIndex = 4;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -60,55 +58,56 @@
             // lblPrompt
             // 
             this.lblPrompt.AutoSize = true;
-            this.lblPrompt.Location = new System.Drawing.Point(175, 55);
-            this.lblPrompt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrompt.Location = new System.Drawing.Point(262, 89);
             this.lblPrompt.Name = "lblPrompt";
-            this.lblPrompt.Size = new System.Drawing.Size(52, 13);
+            this.lblPrompt.Size = new System.Drawing.Size(85, 21);
             this.lblPrompt.TabIndex = 5;
             this.lblPrompt.Text = "               ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(202, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Futura Std Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(171, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 29);
+            this.label1.Size = new System.Drawing.Size(185, 30);
             this.label1.TabIndex = 6;
             this.label1.Text = "Send Suggestion";
             // 
             // txtBoxSubject
             // 
-            this.txtBoxSubject.Location = new System.Drawing.Point(178, 91);
+            this.txtBoxSubject.Location = new System.Drawing.Point(150, 130);
+            this.txtBoxSubject.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxSubject.Name = "txtBoxSubject";
-            this.txtBoxSubject.Size = new System.Drawing.Size(254, 20);
+            this.txtBoxSubject.Size = new System.Drawing.Size(379, 28);
             this.txtBoxSubject.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(122, 97);
+            this.label2.Location = new System.Drawing.Point(66, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(65, 21);
             this.label2.TabIndex = 8;
             this.label2.Text = "Subject:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(122, 123);
+            this.label3.Location = new System.Drawing.Point(66, 177);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
+            this.label3.Size = new System.Drawing.Size(50, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "Body:";
             // 
             // sendSuggestionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(620, 462);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBoxSubject);
@@ -116,7 +115,7 @@
             this.Controls.Add(this.lblPrompt);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtSuggestion);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Font = new System.Drawing.Font("Futura Std Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "sendSuggestionForm";
             this.Text = "sendSuggestionForm";
             this.ResumeLayout(false);

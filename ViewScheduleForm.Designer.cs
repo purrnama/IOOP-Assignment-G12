@@ -35,30 +35,31 @@
             // listBoxSchedule
             // 
             this.listBoxSchedule.FormattingEnabled = true;
-            this.listBoxSchedule.ItemHeight = 16;
-            this.listBoxSchedule.Location = new System.Drawing.Point(193, 117);
+            this.listBoxSchedule.ItemHeight = 21;
+            this.listBoxSchedule.Location = new System.Drawing.Point(58, 115);
             this.listBoxSchedule.Name = "listBoxSchedule";
-            this.listBoxSchedule.Size = new System.Drawing.Size(335, 164);
+            this.listBoxSchedule.Size = new System.Drawing.Size(376, 214);
             this.listBoxSchedule.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Elephant", 16.2F);
-            this.label1.Location = new System.Drawing.Point(243, 55);
+            this.label1.Font = new System.Drawing.Font("Futura Std Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(158, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 37);
+            this.label1.Size = new System.Drawing.Size(165, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "View Schedule";
             // 
             // ViewScheduleForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(495, 375);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxSchedule);
+            this.Font = new System.Drawing.Font("Futura Std Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ViewScheduleForm";
             this.Text = "ViewScheduleForm";
             this.Load += new System.EventHandler(this.ViewScheduleForm_Load);

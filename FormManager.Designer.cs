@@ -70,7 +70,7 @@
             this.tabPgManageCompetition.Controls.Add(this.btnAddCompetition);
             this.tabPgManageCompetition.Location = new System.Drawing.Point(4, 24);
             this.tabPgManageCompetition.Name = "tabPgManageCompetition";
-            this.tabPgManageCompetition.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPgManageCompetition.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPgManageCompetition.Size = new System.Drawing.Size(378, 425);
             this.tabPgManageCompetition.TabIndex = 0;
             this.tabPgManageCompetition.Text = "Manage Competition";
@@ -141,7 +141,7 @@
             this.tabPgRecommendedStudent.Controls.Add(this.lstBoxRecommendedStudent);
             this.tabPgRecommendedStudent.Location = new System.Drawing.Point(4, 24);
             this.tabPgRecommendedStudent.Name = "tabPgRecommendedStudent";
-            this.tabPgRecommendedStudent.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPgRecommendedStudent.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tabPgRecommendedStudent.Size = new System.Drawing.Size(378, 425);
             this.tabPgRecommendedStudent.TabIndex = 1;
             this.tabPgRecommendedStudent.Text = "Recommended Students";
